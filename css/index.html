@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripiter - CSS</title>
+    <link rel="icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="../" id="ripiter">ripiter</a>
+        <nav>
+            <a href="../html/"><button class="menuBtn">HTML</button></a>
+            <a href="../css/"><button class="menuBtn selected">CSS</button></a>
+            <a href="../js/"><button class="menuBtn">JS</button></a>
+            <a href="../php/"><button class="menuBtn">PHP</button></a>
+            <a href="../sql/"><button class="menuBtn">SQL</button></a>
+        </nav>
+    </header>
+    <main>
+        <img src="csslogo.svg" class="logo">
+        <h1>CSS - wprowadzenie</h1>
+        <p>CSS (Cascading Style Sheets) to język służący do opisu formy prezentacji stron WWW. Arkusz stylów CSS to lista reguł ustalających, w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranych elementów HTML. Można w ten sposób opisać wszystkie pojęcia odpowiedzialne za prezentację elementów dokumentów internetowych, takie jak rodzina czcionek, kolor tekstu, marginesy, odstęp międzywierszowy lub nawet pozycja danego elementu względem innych elementów bądź okna przeglądarki. Wykorzystanie arkuszy stylów daje znacznie większe możliwości pozycjonowania elementów na stronie, niż oferuje sam HTML.</p>
+
+        <hr>
+
+        <h1>Kolor tekstu - color</h1>
+        <a href="https://www.kurshtml.edu.pl/css/wykaz_kolorow_rozszerzonych,kolory.html">Lista kolorów w CSS</a>
+        <h4>Przykład:</h4>
+        <i style="color:skyblue;">Tekst</i> - <pre>color:skyblue;</pre><br>
+        <i style="color:tomato;">Tekst</i> - <pre>color:tomato;</pre><br>
+        <i style="color:gold;">Tekst</i> - <pre>color:gold;</pre><br>
+        <i style="color:magenta;">Tekst</i> - <pre>color:magenta;</pre>
+
+        <hr>
+
+        <h1>Czcionka - font-family</h1>
+        <h4>Przykład:</h4>
+        <p style="font-family: 'Times New Roman', Times, serif;">Times New Roman</p> - <pre>font-family: 'Times New Roman';</pre>
+
+        <hr>
+
+        <h1>Grubość czcionki - font-weight</h1>
+        <h4>Przykład:</h4>
+        <p style="font-weight: normal;">Normalny tekst</p> - <pre>font-weight: normal;</pre><br>
+        <p style="font-weight: bold;">Gruby tekst</p> - <pre>font-weight: bold;</pre><br>
+        <p style="font-weight: bolder;">Grubszy tekst</p> - <pre>font-weight: bolder;</pre><br>
+        <p style="font-weight: lighter;">Cieńszy tekst</p> - <pre>font-weight: lighter;</pre><br>
+        <p style="font-weight: 900;">Tekst o grubości 900</p> - <pre>font-weight: 900;</pre><br>
+
+        <hr>
+
+        <h1>Krawędzie - border, border-top, border-bottom, border-left, border-right</h1>
+        <h4>Składnia:</h4>
+        <pre>border: grubość styl kolor;</pre>
+
+        <h4>Przykład:</h4>
+        <pre>border: 2px solid lightgreen;</pre>
+        <div class="pudelko" style="border: 2px solid skyblue;"></div>
+        <br>
+        <pre>border-top: 5px dashed lightgreen;</pre>
+        <div class="pudelko" style="border-top: 5px dashed lightgreen;"></div>
+        <br>
+        <pre>border-bottom: 5px dotted lightgreen;</pre>
+        <div class="pudelko" style="border-bottom: 5px dotted lightgreen;"></div>
+        <br>
+        <pre>border-left: 5px double lightgreen;</pre>
+        <div class="pudelko" style="border-left: 5px double lightgreen;"></div>
+        <br>
+        <pre>border-right: 5px groove lightgreen;</pre>
+        <div class="pudelko" style="border-right: 5px groove lightgreen;"></div>
+        <br>
+        
+        <hr>
+
+        <h1>Cień tekstu - text-shadow</h1>
+        <h4>Składnia:</h4>
+        <pre>text-shadow: odległośćX odległośćY promieńRozmycia kolor;</pre>
+        <h4>Przykład:</h4>
+        <pre>text-shadow: 3px 3px 5px white;</pre><br>
+        <p style="font-size:36px; text-shadow: 3px 3px 5px white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+        <hr>
+
+        <h1>Cień ramki elementu - box-shadow</h1>
+        <h4>Składnia:</h4>
+        <pre>box-shadow: odległośćX odległośćY promieńRozmycia kolor;</pre>
+        <h4>Przykład:</h4>
+        box-shadow na divie<br>
+        <pre>box-shadow: 10px 10px 10px white;</pre>
+        <div class="pudelko" style="box-shadow: 10px 10px 10px white;"></div>
+        <br><br>
+        box-shadow na tekście<br>
+        <pre>box-shadow: 10px 10px 10px white;</pre><br>
+        <p style="font-size:36px; box-shadow: 3px 3px 5px white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <br><br>
+
+        <hr>
+
+        <div id="pudelkocien"></div>
+        <div class="pudelko">pudło</div>
+        <div class="pudelko" style="margin:100px;">margin :100px</div>
+        <div class="pudelko" style="padding:100px;">padding: 100px</div>
+        <div class="pudelko" style="margin-left:auto;">margin -left: auto</div>
+        <div class="pudelko" style="margin:auto;">margin :auto</div>
+        <br>
+
+        <hr>
+
+
+        <div class="pudelko" style="float:left;">float :left</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+        <div class="pudelko" style="float:right;">float :right</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tenetur expedita eos! Sit non accusantium labore doloremque, rerum iste exercitationem magni beatae nemo. Quod explicabo assumenda facilis! Voluptatum, laborum accusamus!</p>
+    </main>
+</body>
+</html>

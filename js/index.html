@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripiter - JS</title>
+    <link rel="icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="../" id="ripiter">ripiter</a>
+        <nav>
+            <a href="../html/"><button class="menuBtn">HTML</button></a>
+            <a href="../css/"><button class="menuBtn">CSS</button></a>
+            <a href="../js/"><button class="menuBtn selected">JS</button></a>
+            <a href="../php/"><button class="menuBtn">PHP</button></a>
+            <a href="../sql/"><button class="menuBtn">SQL</button></a>
+        </nav>  
+    </header>
+    <main>
+    <img class="logo" src="jslogo.png">
+    <h1>JavaScript - wprowadzenie</h1>
+    JavaScript to język programowania skryptowego najczęściej stosowany na stronach internetowych do zapewniania ich interaktywności, obsługi zdarzeń, walidacji danych wprowadzanych w formularzach oraz tworzenia złożonych efektów wizualnych. Działa on po stronie klienta, jest wykonywany lokalnie na komputerze użytkownika strony internetowej. Jest językiem interpretowanym, czyli takim, który nie wymaga kompilacji (zamiany kody źródłowego na binarny język maszynowy). Kod JavaScriptu jest wczytywany, interpretowany i wykonywany przez interpreter języka zawarty w przeglądarce internetowej.
+
+    <hr>
+
+    <h1>Zmienne - let, var</h1>
+    Zmienne możemy deklarować za pomocą słów kluczowych let i var. Zaleca się jednak korzystanie z let, gdyż jest to nowszy standard deklarowania zmiennej w JS.
+    <h4>Przykład:</h4>
+    Zadeklarowanie zmiennej bez przypisania jej wartości domyślnej:
+    <pre>let zmienna1;</pre>
+    <pre>var zmienna2;</pre>
+    Zadeklarowanie zmiennej z przypisaniem jej wartości domyślnej:
+    <pre>let zmienna1 = 1;</pre>
+    <pre>var zmienna2 = "tekst";</pre>
+
+    <hr>
+
+    <h1>Typy danych</h1>
+    Liczba (number), (w JavaScipcie jest tylko jeden typ zmiennej liczbowej, zarówno dla liczb całkowitych jak i zmiennoprzecinkowych):
+    <pre>let zmienna1 = 1;</pre>
+    Ciąg znaków (string):
+    <pre>let zmienna2 = "tekst";</pre>
+    Wartość logiczna (boolean), prawda:
+    <pre>let zmienna3 = true;</pre>
+    Wartość logiczna (boolean), fałsz:
+    <pre>let zmienna4 = false;</pre>
+    Oznaczenie braku wartości:
+    <pre>let zmienna5 = null;</pre>
+    Tablica (array), (omówione dalej):
+    <pre>let zmienna6 = [element1, ..., elementX];</pre>
+    <hr>
+
+    <h1>Stałe - const</h1>
+    <h4>Przykład: </h4>
+    <pre>const stala1 = 1;</pre>
+    <pre>const stala2 = "tekst";</pre>
+
+    <hr>
+
+    <h1>Wypisanie danych do konsoli - console.log</h1>
+    <h4>Przykład:</h4>
+    Wypisanie tekstu "Hello world!":
+    <pre>console.log("Hello world!");</pre>
+    Wypisanie zawartości zmiennej:
+    <pre>let zmienna = "Tekst";</pre>
+    <pre>console.log(zmienna);</pre>
+
+    <hr>
+
+    <h1>Okna dialogowe przeglądarki - alert, prompt, confirm</h1>
+    alert - informacja dla użytkownika, posiada jedynie przycisk "OK".<br>
+    prompt - okno, które może posłużyć do wprowadzania danych.<br>
+    confirm - okno, wyposażone w dwa przyciski: "OK" oraz "Anuluj", prosi użytkownika o potwierdzenie.
+    <h4>Przykład:</h4>
+    alert:
+    <pre>alert("Oto komunikat.");</pre>
+    Skrypt, który prosi użytkownika o podanie swojego imienia (prompt) a następnie zwraca je używając alert:
+    <pre>let imie = prompt("Podaj imię:");</pre>
+    <pre>alert(imie);</pre>
+    Skrypt, który prosi użytkownika o potwierdzenie swojego wieku (confirm) a następnie zwraca jego wybór używając console.log:
+    <pre>let wiek = confirm("Czy masz 18 lat?");</pre>
+    <pre>console.log(wiek);</pre>
+    Jeśli użytkownik wybierze "OK" do konsoli zostanie zwrócona wartość "true", natomiast jeśli wybierze opcję "Anuluj" zostanie zwrócona wartość "false"
+
+    <hr>
+
+    <h1 id="operatory">Operatory</h1>
+    Dodawanie:
+    <pre>x + y</pre>
+    Odejmowanie:
+    <pre>x - y</pre>
+    Mnożenie:
+    <pre>x * y</pre>
+    Dzielenie:
+    <pre>x / y</pre>
+    Modulo (reszta z dzielenia):
+    <pre>x % y</pre>
+    Potęgowanie:
+    <pre>x ** y</pre>
+    Przypisanie dodawania
+    <pre>x += y</pre>
+    <pre>//równoznaczne: x = x + y</pre>
+    Przypisanie odejmowania:
+    <pre>x -= y</pre>
+    <pre>//równoznaczne: x = x - y</pre>
+    Przypisanie mnożenia:
+    <pre>x *= y</pre>
+    <pre>//równoznaczne: x = x * y</pre>
+    Przypisanie dzielenia:
+    <pre>x /= y</pre>
+    <pre>//równoznaczne: x = x / y</pre>
+    Przypisanie modulo:
+    <pre>x %= y</pre>
+    <pre>//równoznaczne: x = x % y</pre>
+    Inkrementacja:
+    <pre>x++</pre>
+    <pre>//równoznaczne: x = x + 1</pre>
+    Dekrementacja:
+    <pre>x--</pre>
+    <pre>//równoznaczne: x = x - 1</pre>
+    Porównanie wartości:
+    <pre>x == y</pre>
+    Porównanie wartości i ich typu:
+    <pre>x === y</pre>
+    Czy wartości są różne:
+    <pre>x != y</pre>
+    Czy wartości lub typy są różne:
+    <pre>x !== y</pre>
+    Mniejsze:
+    <pre>x &lt; y</pre>
+    Większe:
+    <pre>x > y</pre>
+    Mniejsze lub równe:
+    <pre>x &lt;= y</pre>
+    Większe lub równe:
+    <pre>x >= y</pre>
+
+    <hr>
+
+    <h1>Instrukcja warunkowa - if</h1>
+    <p>if - sprawdza, czy dany warunek jest prawdziwy, jeżeli tak to wykonuje zawarte polecenie.</p>
+    <p>else if - jeśli poprzedni warunek nie został spełniony, else if sprawdza nowy warunek, jeżeli jest prawdziwy, wykonuje go, jeżeli jest fałszywy, przechodzi do następnego else if bądź else.</p>
+    <p>else - wykonuje kod, jeśli wszystkie poprzednie warunki nie zostały spełnione.</p>
+    <h4>Składnia:</h4>
+    Tylko if:
+    <pre>
+if(warunek){
+    //kod, który wykonuje się, jeśli zostanie spełniony warunek
+}
+    </pre>
+    if, else if, else:
+    <pre>
+if(warunek1){
+    //kod, który wykonuje się, jeśli zostanie spełniony warunek1
+}
+else if(warunek2){
+    //kod, który wykonuje się, jeśli warunek1 nie zostanie spełniony i warunek2 zostanie spełniony
+}
+else{
+    //kod, który wykonuje się, jeśli wszystkie warunki nie zostaną spełnione
+}
+    </pre>
+    <h4>Przykład:</h4>
+    Kod, który sprawdza, czy liczba jest dodatnia, ujemna lub równa 0:
+    <pre>
+let liczba = 1;
+
+if(liczba > 0){
+    alert("Liczba jest dodatnia.");
+}
+else if(liczba &lt; 0){
+    alert("Liczba jest ujemna.");
+}
+else{
+    alert("Liczba jest równa 0.");
+}
+    </pre>
+
+    <hr>
+
+    <h1>Operatory logiczne - &&, ||</h1>
+    <p>Operatory logiczne pozwalają łączyć wiele warunków w jednej instrukcji warunkowej.</p>
+    <p>&& - i/oraz, w przypadku, kiedy mamy dwa warunki, oba muszą zostać spełnione.</p>
+    <p>|| - lub, w przypadku, kiedy mamy dwa warunki, przynjamniej jeden musi zostać spełniony.</p>
+    <h4>Składnia:</h4>
+    &&:
+    <pre>
+if(warunek1 && warunek2){
+    //kod, który wykona się po spełnieniu dwóch warunków.
+}</pre><br>
+    ||:
+    <pre>
+if(warunek1 || warunek2){
+    //kod, który wykona się po spełnieniu przynajmniej jednego warunku.
+}</pre>
+    <h4>Przykład:</h4>
+    &&:<br>
+    Skrypt, który sprawdza, czy wartość zmiennej jest większa od 1 i mniejsza od 10:
+    <pre>
+let liczba = 5;
+
+if(liczba>1 && liczba&lt;10){
+    alert("Liczba jest poprawna");
+}
+else{
+    alert("Liczba jest spoza zakresu");
+}</pre>
+
+    <hr>
+
+    <h1>Pętle - while, do while, for</h1>
+    <p>Pętle pozwalają na wykonanie kodu wielokrotną ilość razy.</p>
+    <p>while - wykonuje kod jeśli dany warunek jest spełniony.</p>
+    <p>do while - wykonuje kod przynajmniej raz. Jeśli warunek jest spełniony, wykonuje się dalej.</p>
+    <p>for - pętla, którą najczęściej wykorzystuje się, gdy chcemy wykonać kod określoną ilość razy.</p>
+    <h4>Składnia:</h4>
+    while:
+    <pre>
+while(warunek){
+    //Kod wykonywany, dopóki warunek jest prawdziwy.
+}
+    </pre>
+    do while:
+    <pre>
+do{
+    //Kod, który wykonuje się przynajmniej raz.
+    //Jeśli warunek jest prawdziwy, wykonuje się dalej.
+}while(warunek);</pre>
+    for:
+    <pre>
+for(inicjalizacja_zmiennej; warunek; polecenie){
+    //Kod do wykonania.
+}</pre>
+    <ul>
+        <li><i>inicjalizacja_zmiennej</i> - deklaracja oraz ustawienie wartości początkowej zmiennej (najczęściej 0). Zmienna ta będzie licznikiem pętli.</li>
+        <li><i>warunek</i> - pętla będzie się wykonywać dopóki ten warunek będzie spełniony. Zazwyczaj będzie to po prostu warunek, że nasza zadeklarowana wcześniej zmienna musi być mniejsza od danej przez nas liczby.</li>
+        <li><i>polecenie</i> - Tutaj podajemy co będzie się działo z naszym licznikiem co każde okrążenie pętli. Najczęściej będzie to inkrementacja, czyli zwiększenie wartości zmiennej o 1.</li>
+    </ul>
+    <h4>Przykład:</h4>
+    while:<br>kod, który do skutku prosi użytkownika o podanie poprawnej odpowiedzi na wynik działania 2+2:
+    <pre>
+let odp;
+while(odp != 4){
+    odp = prompt("Ile to jest 2+2?");
+}</pre>
+    for:<br>kod, który wykona się 5 razy, za każdym razem wypisując do konsoli aktualną wartość i. W konsoli będziemy mogli zobaczyć cyfry od 0-4 (a nie 5), gdyż pętla rozpoczyna od wartości 0 a ostatnią możliwą wartością jest 4 (i ma być mniejsze od 5). Lecz mimo tego kod faktycznie wykonał się 5 razy gdyż:
+    <ul>
+        <li>1 obieg pętli - i = 0</li>
+        <li>2 obieg pętli - i = 1</li>
+        <li>3 obieg pętli - i = 2</li>
+        <li>4 obieg pętli - i = 3</li>
+        <li>5 obieg pętli - i = 4</li>
+    </ul>
+    <pre>
+for(let i = 0; i &lt; 5; i++){
+    console.log(i);
+}</pre>
+
+    <hr>
+
+    <h1>Tablice</h1>
+    <p>Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w JS rodzaju (nawet inne tablice). Deklarujemy je tak samo jak zmienne i stałe.</p>
+    <h4>Składnia:</h4>
+    <pre>const tablica1 = [element1, ..., elementX];</pre>
+    <h4>Przykład:</h4>
+    <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
+    <p>Tablicę stałą możemy modyfikować (omówione dalej) tak samo jak zmienną, lecz nie możemy do niej przypisać innej tablicy tzn.:</p>
+    <pre>
+const tablica1 = [1,2,3];
+let tablica2 = [4,5,6];
+//Linijka poniżej nie wykona się i wypisze w konsoli błąd.
+tablica1 = tablica2;
+    </pre>
+
+    <hr>
+
+    <h1>Metody pracy z tablicami i modyfikacja tablic</h1>
+    <h2>Podstawowe metody:</h2>
+    <h4>Składnia:</h4>
+    Długość tablicy (ilość jej elementów):
+    <pre>tablica.length</pre>
+    Przekształcenie tablicy na napis:
+    <pre>tablica.toString()</pre>
+    Wstawianie elementu na końcu tablicy:
+    <pre>tablica.push(element);</pre>
+    Wstawianie elementu na początku tablicy:
+    <pre>tablica.unshift(element);</pre>
+    Usuwanie ostatniego elementu tablicy:
+    <pre>tablica.pop();</pre>
+    Usuwanie pierwszego elementu tablicy:
+    <pre>tablica.shift();</pre>
+    Łączenie tablic:
+    <pre></pre>
+    Sortowanie elementów tablicy:
+    <pre>tablica.sort();</pre>
+    Odwrócenie kolejności elementów w tablicy:
+    <pre>tablica.reverse();</pre>
+    <h4>Przykład:</h4>
+    Nasza tablica:
+    <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
+    Wypisanie do konsoli liczby elementów tablicy:
+    <pre>console.log(lista_zakupow.length);
+//Do konsoli zostanie wypisana liczba 5.</pre>
+    Wypisanie do konsoli tablicy jako tekst:
+    <pre>console.log(lista_zakupow.toString());</pre>
+    Wstawienie na koniec tablicy elementu "Piwo":
+    <pre>lista_zakupow.push("Piwo");</pre>
+    Wstawienie na początek tablicy elementu "Piwo":
+    <pre>lista_zakupow.unshift("Piwo");</pre>
+    <h2>Metoda splice:</h2>
+    splice - 
+    <h4>Składnia:</h4>
+    <pre>tablica.splice(indeks, liczba, element1, ..., elementX);</pre>
+    <ul>
+        <li><i>indeks</i> - Indeks elementu od którego chcemy zacząć edytować tablicę.</li>
+        <li><i>liczba</i> - Liczba elementów, którą chcemy usunąć od elementu z podanym przez nas wcześniej indeksem początkowym (WŁĄCZNIE Z NIM).</li>
+        <li><i>element1, ..., elementX</i> - Elementy, które chcemy dodać.</li>
+    </ul>
+    <h4>Przykład:</h4>
+    Nasza tablica:
+    <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
+    Usuwanie wszystkich elementów z tablicy:
+    <pre>lista_zakupow.splice(0);</pre>
+    Został tutaj zadeklarowany jedynie indeks elementu, od którego chcemy zacząć, w tym przypadku od samego początku tablicy (indeks 0 jest pierwszy). Jeśli nie wprowadziliśmy kolejnego argumentu, czyli liczby elementów, które chcemy usunąć, metoda splice domyślnie usuwa wszystkie następne elementy.<br><br>
+    Usuwanie wszystkiego począwszy od drugiego elementu, który ma indeks 1 (WŁĄCZNIE Z NIM):
+    <pre>lista_zakupow.splice(1);
+//W tym przypadku w tablicy zostanie jedynie element "Mleko".</pre>
+    Usuwanie jednego elementu począwszy od elementu trzeciego:
+    <pre>lista_zakupow.splice(2, 1);
+//W tym przypadku tablica będzie miała postać ["Mleko", "Chleb", "Sok", "Masło"]</pre>
+    Wstawianie na początku elementów "Piwo", "Gazeta":
+    <pre>lista_zakupow.splice(0, 0, "Piwo", "Gazeta");
+//Tablica: ["Piwo", "Gazeta", "Mleko", "Chleb", "Jajka", "Sok", "Masło"]</pre>
+    Nowe elementy zostały wstawione w miejsce elementu pierwszego o indeksie 0, lecz nie został on usunięty ze względu na drugi argument o wartości 0.<br><br>
+    Wstawianie elementów "Piwo", "Gazeta" zaczynając od elementu trzeciego:
+    <pre>lista_zakupow.splice(2, 0, "Piwo", "Gazeta");
+//Tablica: ["Mleko", "Chleb", "Piwo", "Gazeta", "Jajka", "Sok", "Masło"]</pre>
+    Usunięcie dwóch elementów i wstawienie "Piwo", "Gazeta" zaczynając od elementu trzeciego:
+    <pre>lista_zakupow.splice(2, 2, "Piwo", "Gazeta");
+//Tablica: ["Mleko", "Chleb", "Piwo", "Gazeta", "Masło"]</pre>
+    <h2>Metoda concat - łączenie tablic</h2>
+    Metoda concat pozwala nam na łączenie tablic oraz dodawanie do nich nowych elementów.
+    <h4>Składnia:</h4>
+    Jeśli chcemy złączyć tablice:
+    <pre>const zlaczoneTablice = tablica1.concat(tablica2);</pre>
+    <ul>
+        <li><i>zlaczoneTablice</i> - Tablica, do której przypiszemy wartość złączonych tablic - tablica1 i tablica2.</li>
+    </ul>
+    <br>
+    Jeśli chcemy złączyć tablicę i elementy:
+    <pre>const tablicaPlusElementy = tablica1.concat(element1, ..., elementX);</pre>
+    <ul>
+        <li><i>tablicaPlusElementy</i> - Tablica, do której przypiszemy wartość złączonej tablicy1 z elementami.</li>
+    </ul>
+    <h4>Przykład:</h4>
+    Łączenie tablic:
+    <pre>
+const lista_zakupow1 = ["Mleko", "Chleb"];
+const lista_zakupow2 = ["Jajka", "Sok"];
+
+const zlaczoneListy = lista_zakupow1.concat(lista_zakupow2);
+
+//Tablica zlaczoneListy będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]
+    </pre>
+    Łączenie tablicy i elementów:
+    <pre>
+const lista_zakupow = ["Mleko", "Chleb"];
+       
+const lista_zakupow2 = lista_zakupow.concat("Jajka", "Sok");
+        
+//Tablica lista_zakupow2 będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]
+    </pre>
+    
+    <hr>
+
+    <h1>Pętle i tablice</h1>
+    <h4>Przykład:</h4>
+    Nasza tablica:
+    <pre>let imiona = ["Tomasz", "Karol", "Natalia];</pre>
+    <p>Przykłady pętli, które przejdą przez każdy element tablicy i wypiszą go do konsoli:</p>
+    Zwykła pętla for:
+    <pre>
+for (let i = 0; i &lt; imiona.length; i++){
+    console.log(imiona[i]);
+}</pre>
+    Pętla for..of
+    <pre>
+for (let imie of imiona){
+    console.log(imie);
+}</pre>
+    Pętla forEach
+    <pre>
+imiona.forEach(
+    e=>console.log(e)
+)</pre>
+
+    <br>
+    Do zrobienia:
+    ||
+    </main>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripiter - PHP</title>
+    <link rel="icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="../" id="ripiter">ripiter</a>
+        <nav>
+            <a href="../html/"><button class="menuBtn">HTML</button></a>
+            <a href="../css/"><button class="menuBtn">CSS</button></a>
+            <a href="../js/"><button class="menuBtn">JS</button></a>
+            <a href="../php/"><button class="menuBtn selected">PHP</button></a>
+            <a href="../sql/"><button class="menuBtn">SQL</button></a>
+        </nav>
+    </header>
+    <main>
+    <img class="logo" src="phplogo.png">
+    <h1>PHP - wprowadzenie</h1>
+    PHP (Hypertext Preprocessor) to skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym. Działa po stronie serwera, a nie po stronie klienta jak np. JavaScript. Jest językiem interpretowanym, czyli takim, który nie wymaga kompilacji (zamiany kody źródłowego na binarny język maszynowy). Skrypt PHP jest wykonywany na serwerze i zwracany do przeglądarki użytkownika w formie kodu HTML.
+    <hr>
+
+    <h1>Sprawdzenie konfiguracji PHP - phpinfo</h1>
+    phpinfo używamy, jeśli chcemy sprawdzić informacje na temat aktualnej konfiguracji PHP na serwerze. 
+    <h4>Składnia:</h4>
+    <pre>phpinfo();</pre>
+
+    <hr>
+
+    <h1>Zmienne</h1>
+    <h4>Składnia:</h4>
+    <pre>$zmienna = wartosc;</pre>
+    <h4>Przykład:</h4>
+    <pre>$tekst = "Hello world";</pre>
+    <pre>$liczba = 1;</pre>
+    
+    <hr>
+    
+    <h1>Typy danych</h1>
+    Ciąg znaków (string):
+    <pre>$zmienna1 = "Hello world";</pre>
+    Liczba całkowita (intiger):
+    <pre>$zmienna2 = 1;</pre>
+    Liczba zmiennoprzecinkowa (float):
+    <pre>$zmienna3 = 5.5;</pre>
+    Wartość logiczna (boolean), prawda:
+    <pre>$zmienna4 = true;</pre>
+    Wartość logiczna (boolean), fałsz:
+    <pre>$zmienna5 = false;</pre>
+    Oznaczenie braku wartości:
+    <pre>$zmienna6 = null;</pre>
+    Tablica (array), (omówione dalej):
+    <pre>let zmienna7 = array(element1, ..., elementX);</pre>
+    <hr>
+
+    <h1>Wypisanie danych do przeglądarki - echo</h1>
+    <h4>Składnia:</h4>
+    <pre>echo wartosc;</pre>
+    <h4>Przykład:</h4>
+    Wypisanie tekstu:
+    <pre>echo "Hello world";</pre>
+    Wypisanie zawartości zmiennej:
+    <pre>echo $zmienna;</pre>
+    Wypisanie znacznika HTML, w tym przypadku nagłówka pierwszego stopnia:
+    <pre>echo "&lt;h1>Nagłówek&lt;/h1>";</pre>
+        
+    <hr>
+
+    <h1>Operatory</h1>
+    Bliźniacze do tych w JavaScripcie, które opisane są
+    <a href="../js/index.html#operatory">tutaj.</a>
+
+    <hr>
+
+    <h1>Instrukcja warunkowa - if</h1>
+    <p>if - sprawdza, czy dany warunek jest prawdziwy, jeżeli tak to wykonuje zawarte polecenie.</p>
+    <p>elseif - jeśli poprzedni warunek nie został spełniony, else if sprawdza nowy warunek, jeżeli jest prawdziwy, wykonuje go, jeżeli jest fałszywy, przechodzi do następnego elseif bądź else. <b>Uwaga:</b> mimo, że w PHP można używać zarówno "elseif" jak i "else if" to zaleca się korzystanie z tego pierwszego!</p>
+    <p>else - wykonuje kod, jeśli wszystkie poprzednie warunki nie zostały spełnione.</p>
+
+    <h4>Składnia:</h4>
+    Tylko if:
+    <pre>
+if(warunek){
+    //kod, który wykonuje się, jeśli zostanie spełniony warunek
+}</pre>
+    if, elseif, else:
+    <pre>
+if(warunek1){
+    //kod, który wykonuje się, jeśli zostanie spełniony warunek1
+}
+elseif(warunek2){
+    //kod, który wykonuje się, jeśli warunek1 nie zostanie spełniony i warunek2 zostanie spełniony
+}
+else{
+    //kod, który wykonuje się, jeśli wszystkie warunki nie zostaną spełnione
+}</pre>
+    <h4>Przykład:</h4>
+    Kod, który sprawdza, czy liczba jest dodatnia, ujemna lub równa 0:
+    <pre>
+$liczba = 1;
+
+if($liczba > 0){
+    echo("Liczba jest dodatnia.");
+}
+elseif($liczba &lt; 0){
+    echo("Liczba jest ujemna.");
+}
+else{
+    echo("Liczba jest równa 0.");
+}
+    </pre>
+    
+    <hr>
+
+    <h1>Operatory logiczne - &&/and, ||/or</h1>
+
+    <p>Operatory logiczne pozwalają łączyć wiele warunków w jednej instrukcji warunkowej.</p>
+    <p>&& - i/oraz, w przypadku, kiedy mamy dwa warunki, oba muszą zostać spełnione.</p>
+    <p>|| - lub, w przypadku, kiedy mamy dwa warunki, przynjamniej jeden musi zostać spełniony.</p>
+    <b>Uwaga: </b>W PHP możemy także zastąpić "&&" słowem "and" i "||" słowem "or".
+    <h4>Składnia:</h4>
+    &&:
+    <pre>
+if(warunek1 && warunek2){
+    //kod, który wykona się po spełnieniu dwóch warunków.
+}</pre><br>
+    ||:
+    <pre>
+if(warunek1 || warunek2){
+    //kod, który wykona się po spełnieniu przynajmniej jednego warunku.
+}</pre>
+
+    <h4>Przykład:</h4>
+    Skrypt, który sprawdza, czy wartość zmiennej jest większa od 1 i mniejsza od 10:
+    <pre>
+$liczba = 5;
+
+if($liczba>1 && $liczba&lt;10){
+    echo "Liczba jest poprawna";
+}
+else{
+    echo "Liczba jest spoza zakresu";
+}
+    </pre>
+    
+    <hr>
+
+    <h1>Instrukcja wyboru - switch</h1>
+    Switch używany jest do wykonywania odpowiedniego bloku kodu na podstawie wartości zmiennej.
+    <h4>Składnia:</h4>
+    <pre>
+switch(zmienna){
+    case wartosc1:
+        //kod do wykonania
+        break;
+    case ...:
+        //kod do wykonania
+        break;
+    case wartoscX:
+        //kod do wykonania
+        break;
+    default:
+        //kod do wykonania
+}</pre>
+    <ul>
+        <li><i>default</i> - kod, który wykonuje się, jeśli żaden wcześniejszy przypadek nie zostanie spełniony.</li>
+    </ul>
+    <h4>Przykład:</h4>
+    Skrypt, który na podstawie zmiennej $dzien wypisuje, czy dzisiaj jest weekend:
+    <pre>
+$dzien = "sobota";
+
+switch($dzien){
+    case "sobota":
+        echo "Dzisiaj jest weekend.";
+        break;
+    case "niedziela":
+        echo "Dzisiaj jest weekend.";
+        break;
+    default:
+        echo "Dzisiaj nie jest weekend.";
+}</pre>
+
+    <hr>
+
+    <h1>Instrukcja wyboru - match</h1>
+    <h4>Składnia:</h4>
+    <pre>
+$wartoscZwrocona = match($zmienna){
+    wartoscZmiennej1 => wartoscDoZwrotu,
+    ... => wartoscDoZwrotu,
+    wartoscZmiennejX => wartoscDoZwrotu,
+};</pre>
+    Do zmiennej $wartoscZwrocona zostaje zwrócona odpowiednia wartoscDoZwrotu na podstawie wartości zmiennej $zmienna.
+    <h4>Przykład:</h4>
+    Kod, który na podstawie zmiennej $owoc zwraca nam do zmiennej $ktoryOwoc zdanie, który to owoc:
+    <pre>
+$owoc = "jablko";
+
+$ktoryOwoc = match($owoc){
+    "jablko" => "Ten owoc to jabłko.",
+    "banan" => "Ten owoc to banan.",
+    "gruszka" => "Ten owoc to gruszka."
+};
+
+echo $ktoryOwoc;
+
+//W przeglądarce zobaczymy "Ten owoc to jabłko."
+    </pre>
+
+    <hr>
+
+    <h1>Operator warunkowy - ?</h1>
+    <h4>Składnia:</h4>
+    <pre>$odpowiedz = (warunek) ? odpowiedzJesliTak : odpowiedzJesliNie;</pre>
+    <h4>Przykład:</h4>
+    <pre>
+$dzien = "poniedzialek";
+
+$czyDzisiajPoniedzialek = ($dzien == "poniedzialek") ? "Tak" : "Nie";
+
+echo $czyDzisiajPoniedzialek;
+//W przeglądarce zobaczymy odpowiedź "Tak".
+</pre>
+    <hr>
+
+    <h1>Pętle - while, do while, for, foreach</h1>
+    <p>Pętle pozwalają na wykonanie kodu wielokrotną ilość razy.</p>
+    <p>while - wykonuje kod jeśli dany warunek jest spełniony.</p>
+    <p>do while - wykonuje kod przynajmniej raz. Jeśli warunek jest spełniony, wykonuje się dalej.</p>
+    <p>for - pętla, którą najczęściej wykorzystuje się, gdy chcemy wykonać kod określoną ilość razy.</p>
+    <p>foreach - pętla najczęściej stosowana do wykonania danego kodu dla każdego elementu tablicy.</p>
+    <h4>Składnia:</h4>
+    while:
+    <pre>
+while(warunek){
+    //Kod wykonywany, dopóki warunek jest prawdziwy.
+}
+    </pre>
+    do while:
+    <pre>
+do{
+    //Kod, który wykonuje się przynajmniej raz.
+    //Jeśli warunek jest prawdziwy, wykonuje się dalej.
+}while(warunek);</pre>
+    for:
+    <pre>
+for(inicjalizacja_zmiennej; warunek; polecenie){
+    //Kod do wykonania.
+}</pre>
+    <ul>
+        <li><i>inicjalizacja_zmiennej</i> - deklaracja oraz ustawienie wartości początkowej zmiennej (najczęściej 0). Zmienna ta będzie licznikiem pętli.</li>
+        <li><i>warunek</i> - pętla będzie się wykonywać dopóki ten warunek będzie spełniony. Zazwyczaj będzie to po prostu warunek, że nasza zadeklarowana wcześniej zmienna musi być mniejsza od danej przez nas liczby określającej ile razy pętla ma się wykonać.</li>
+        <li><i>polecenie</i> - Tutaj podajemy co będzie się działo z naszym licznikiem co każde okrążenie pętli. Najczęściej będzie to inkrementacja, czyli zwiększenie wartości zmiennej o 1.</li>
+    </ul>
+    foreach:
+    <pre>
+foreach($tablica as $element){
+    //Kod do wykonania.
+}
+    </pre>
+
+    <hr>
+
+    <h1>Tablice - array</h1>
+    Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w PHP rodzaju (nawet inne tablice). Deklarujemy je tak samo jak zmienne.
+    <h4>Składnia:</h4>
+    <pre>$zmienna = array(element1, ..., elementX);</pre>
+    <h4>Przykład:</h4>
+    <pre>$lista_zakupow = array("Mleko", "Chleb", "Jajka", "Sok", "Masło");</pre>
+    Aby zwrócić zawartość tablicy do przeglądarki, możemy użyć print_r (echo w tym przypadku nie zadziała):
+    <pre>
+print_r($tablica);
+//W przeciwieństwie do echo, nawiasy są wymagane!</pre>
+    <hr>
+
+    <h1>Sortowanie tablic - sort, rsort</h1>
+    <p>sort - sortuje tablicę rosnąco.</p>
+    <p>rsort - sortuje tablicę malejąco.</p>
+    <h4>Składnia:</h4>
+    sort:
+    <pre>sort($tablica);</pre>
+    rsort:
+    <pre>rsort($tablica);</pre>
+    <h4>Przykład:</h4>
+    sort:
+    <pre>
+$owoce = array("jabłko", "gruszka", "banan");
+sort($owoce);
+print_r($owoce);
+//Do przeglądarki zostanie zwrócona zawartość tablicy w kolejności: banan, jabłko, gruszka.</pre>
+    rsort:
+    <pre>
+$liczby = array(12, 53, 89, 34);
+rsort($liczby);
+print_r($liczby);
+//Do przeglądarki zostanie zwrócona zawartość tablicy w kolejności: 89, 53, 34, 12.</pre>
+    </main>
+</body>
+</html>

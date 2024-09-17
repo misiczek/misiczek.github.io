@@ -1,0 +1,46 @@
+body{
+    color: green;
+}
+#kolor{
+    color: red;
+    background-color: lightpink;
+}
+
+#czcionka{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 3em;
+}
+
+#czcionkagruba{
+    font-weight: bold;
+}
+
+#krawedz{
+    border: 3px solid red;
+    border-radius: 20px;
+}
+
+#roznekrawedzie{
+    border-top: 5px solid blue;
+    border-left: 10px dashed purple;
+    border-bottom: 15px dotted yellow;
+    border-right: 3px dashed red;
+}
+
+#tekstcien{
+    text-shadow: 10px 10px 10px orange;
+}
+
+#pudelkocien{
+    width: 100px;
+    height: 100px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.pudelko{
+    border: 5px solid;
+    font-size: 2em;
+    width: 100px;
+    height: 100px;
+}

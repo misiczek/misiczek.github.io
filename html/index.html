@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripiter - HTML</title>
+    <link rel="icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script1.js" defer></script>
+</head>
+<body>
+
+    <header id="header">
+        <a href="../" id="ripiter">ripiter</a>
+        <nav>
+            <a href="../html/"><button class="menuBtn selected">HTML</button></a>
+            <a href="../css/"><button class="menuBtn">CSS</button></a>
+            <a href="../js/"><button class="menuBtn">JS</button></a>
+            <a href="../php/"><button class="menuBtn">PHP</button></a>
+            <a href="../sql/"><button class="menuBtn">SQL</button></a>
+        </nav>
+    </header>
+    <main>
+        <img src="htmllogo.png" class="logo" alt="Logo HTML 5">
+        <h1>HTML - wprowadzenie</h1>
+        <p>HTML (HyperText Markup Language) to język znaczników stosowany do tworzenia i prezentowania stron internetowych w przeglądarkach. Opisuje strukturę informacji witryn i początkowo został zaprojektowany jako język opisu dokumentów tekstowych z możliwością dodawania odnośników. HTML umożliwia strukturyzację treści na stronie: definiowanie nagłówków, paragrafów, list, odnośników oraz innych elementów.</p>
+
+        <hr>
+
+        <h1>Paragraf - &lt;p></h1>
+        <h4>Przykład:</h4>
+        <pre>&lt;p>Tekst w paragrafie&lt;/p></pre>
+        <p>Tekst w paragrafie</p>
+
+        <hr>
+
+        <h1>Nagłówki</h1>
+        <h4>Przykład:</h4>
+        <pre>&lt;h1>Nagłówek pierwszego stopnia&lt;/h1></pre>
+        <h1>Nagłówek pierwszego stopnia</h1>
+        <br>
+        <pre>&lt;h2>Nagłówek drugiego stopnia&lt;/h2></pre>
+        <h2>Nagłówek drugiego stopnia</h2>
+        <br>
+        <pre>&lt;h3>Nagłówek trzeciego stopnia&lt;/h3></pre>
+        <h3>Nagłówek trzeciego stopnia</h3>
+        <br>
+        <pre>&lt;h4>Nagłówek czwartego stopnia&lt;/h4></pre>
+        <h4>Nagłówek czwartego stopnia</h4>
+        <br>
+        <pre>&lt;h5>Nagłówek piątego stopnia&lt;/h5></pre>
+        <h5>Nagłówek piątego stopnia</h5>
+        <br>
+        <pre>&lt;h6>Nagłówek szóstego stopnia&lt;/h6></pre>
+        <h6>Nagłówek szóstego stopnia</h6>
+
+        <hr>
+
+        <h1>Przejście do nowej linii - &lt;br></h1>
+        <h4>Przykład:</h4>
+        <pre>
+tekst, który przejdzie &lt;br> teraz do nowej linii.</pre>
+        tekst, który przejdzie <br> teraz do nowej linii.
+
+        <hr>
+
+        <h1>Linia pozioma - &lt;hr></h1>
+        Linia pozioma jest wykorzystywana do oddzielenia treści o różnej tematyce.
+        <h4>Przykład:</h4>
+        <pre>
+Opis zjawiska X
+&lt;hr>
+Opis zjawiska Y</pre>
+        <div style="width:120px;">
+        Opis zjawiska X
+            <hr>
+        Opis zjawiska Y
+        </div>
+        <hr>
+
+        <h1>Link - &lt;a></h1>
+        <h4>Składnia</h4>
+        <pre>&lt;a href="adres" title="tekst po najechaniu">Nazwa linku&lt;a></pre>
+        Jeśli dodatkowo dodamy atrybut <pre class="inline">target="_blank"</pre>, strona otworzy się w nowej karcie.
+        <h4>Przykład:</h4>
+        <pre>&lt;a href="https://google.com" title="Google" target="_blank">Link do Google&lt;/a&gt</pre>
+        <a href="https://google.com" title="Google" target="_blank">Link do Google</a>      
+
+        <hr>
+
+        <h1>Plik audio - &lt;audio></h1>
+        <h4>Składnia:</h4>
+        <pre>
+&lt;audio controls>
+    &lt;source src="adres">&lt;/soruce>
+&lt;/audio></pre>   
+        <li><i>controls</i> - Dodaje menu do sterowania plikiem audio.</li>
+        <li><i>&lt;source></i> - Znacznik źródła</li>
+        <h4>Przykład:</h4>
+        <pre>
+&lt;audio controls>
+    &lt;source src="ripiter.ovh/piwo.mp3">&lt;/source>
+&lt;/audio></pre>
+            <audio controls>
+                <source src="../piwo.mp3"></source>
+            </audio><br>
+            <i>Utwór: Piwson TSC - PIWO HARDSTYLE</i>
+        <hr>
+
+        <h1>Plik wideo - &lt;video></h1>
+        <h4>Składnia:</h4>
+<pre>&lt;video src="adres" controls>&lt;/video></pre>
+        <h4>Przykład:</h4>
+<pre>&lt;video src="ripiter.ovh/harnas.mp4" controls>&lt;/video></pre>
+        <video src="../harnas.mp4" controls></video>
+
+        <hr>
+
+        <h1>Formatowanie tekstu</h1>
+        <h4>Przykład:</h4>
+        <pre>&lt;b>Gruby&lt;/b></pre>
+        <b>Gruby</b>
+        <br><br>
+        <pre>&lt;i>Pochylony&lt;/i></pre>
+        <i>Pochylony</i>
+        <br><br>
+        <pre>&lt;u>Podkreślony&lt;/u></pre>
+        <u>Podkreślony</u>
+        <br><br>
+        <pre>&lt;del>Przekreślony&lt;/del></pre>
+        <del>Przekreślony</del>
+        <br><br>
+        <pre>&lt;big>Duży&lt;/big></pre>
+        <big>Duży</big>
+        <br><br>
+        <pre>&lt;small>Mały&lt;/small></pre>
+        <small>Mały</small>
+        <br><br>
+        <pre>&lt;sub>Indeks dolny&lt;/sub></pre>
+        <sub>Indeks dolny</sub>
+        <br><br>
+        <pre>&lt;sup>Indeks górny&lt;/sup></pre>
+        <sup>Indeks górny</sup>
+        <br><br>
+        
+        <hr>
+
+        <h1>Listy</h1>
+        <p>&lt;ul> - Lista nieuporządkowana (punktowana)</p>
+        <p>&lt;ol> - Lista numerowana</p>
+        <p>&lt;li> - Element listy</p>
+        <p>&lt;dl> - Lista definicji</p>
+        <p>&lt;dt> - Termin/nazwa na liście definicji</p>
+        <p>&lt;dd> - Opis terminu/nazwy</p>
+        <h3></h3>
+        <h4>Przykład:</h4>
+        Lista nieuporządkowana (punktowana):
+        <pre>
+&lt;ul>
+    &lt;li>to&lt;/li>
+    &lt;li>jest&lt;/li>
+    &lt;li>lista&lt;/li>
+    &lt;li>ul&lt;/li>
+&lt;/ul></pre>
+        <ul>
+            <li>to</li>
+            <li>jest</li>
+            <li>lista</li>
+            <li>ul</li>
+        </ul>
+        <br>
+        Lista numerowana:
+        <pre>
+&lt;ol>
+    &lt;li>to&lt;/li>
+    &lt;li>jest&lt;/li>
+    &lt;li>lista&lt;/li>
+    &lt;li>ol&lt;/li>
+&lt;/ol></pre>
+        <ol>
+            <li>to</li>
+            <li>jest</li>
+            <li>lista</li>
+            <li>ol</li>
+        </ol>
+        <br>
+        Lista definicji:
+        <pre>
+&lt;dl>
+    &lt;dt>to&lt;/dt>
+    &lt;dd>jest&lt;/dd>
+    &lt;dt>lista&lt;/dt>
+    &lt;dt>dl&lt;/dt>
+&lt;/dl> </pre>
+        <dl>
+            <dt>to</dt>
+            <dd>jest</dd>
+            <dt>lista</dt>
+            <dt>dl</dt>
+        </dl>
+
+    <hr>
+
+        <h1>Tabela - &lt;table></h1>
+        <p>&lt;tr> - Wiersz tabeli</p>
+        <p>&lt;th> - Nagłówek tabeli</p>
+        <p>&lt;td> - Komórka tabeli</p>
+        <h4>Przykład:</h4>
+        <pre>
+&lt;table border="1">
+    &lt;tr>
+        &lt;th>Imię&lt;/th>
+        &lt;th>Nazwisko&lt;/th>
+        &lt;th>Stanowisko&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Jan&lt;/td>
+        &lt;td>Kowalski&lt;/td>
+        &lt;td>Kasjer&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Adam&lt;/td>
+        &lt;td>Nowak&lt;/td>
+        &lt;td>Kierownik&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Kamil&lt;/td>
+        &lt;td>Tumulec&lt;/td>
+        &lt;td>Dostawca&lt;/td>
+    &lt;/tr>
+&lt;/table></pre>
+        <ul>
+            <li><i>border</i> - atrybut ustawiający grubość krawędzi tabeli.</li>
+        </ul>
+        <table border="1">
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Stanowisko</th>
+            </tr>
+            <tr>
+                <td>Jan</td>
+                <td>Kowalski</td>
+                <td>Kasjer</td>
+            </tr>
+            <tr>
+                <td>Adam</td>
+                <td>Nowak</td>
+                <td>Kierownik</td>
+            </tr>
+            <tr>
+                <td>Kamil</td>
+                <td>Tumulec</td>
+                <td>Dostawca</td>
+            </tr>
+        </table>
+
+    <hr>
+
+        <h1>Przycisk - &lt;button></h1>
+        <h4>Przykład:</h4>
+        <pre>
+&lt;button>Przycisk&lt;/button></pre>
+        <button>Przycisk</button><br>
+
+
+    <hr>
+
+    <h1>Formularz:</h1>
+    <form method="POST">
+        <label for="tekst">text:</label>
+        <input type="text" id="tekst">
+
+        <br>
+
+        <label for="wymagane">required:</label>
+        <input type="text" id="wymagane" required>
+
+        <br>
+
+        <label for="min">minlenght:</label>
+        <input type="text" id="min" minlength="5">
+
+        <br>
+
+        <label for="maks">maxlenght:</label>
+        <input type="text" id="maks" maxlength="3">
+
+        <br>
+
+        <label for="trzymaczmiejsca">placeholder:</label>
+        <input type="text" id="trzymaczmiejsca" placeholder="placeholder">
+
+        <br>
+
+        <label for="haslo">password:</label>
+        <input type="password" id="haslo">
+
+        <br>
+
+        <label for="email">email:</label>
+        <input type="email" id="email">
+
+        <br>
+
+        <label for="telefon">tel:</label>
+        <input type="tel" id="telefon" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="000-000-000">
+
+        <br>
+
+        <label for="data">date:</label>
+        <input type="date" id="data">
+
+        <br>
+
+        <label for="liczba">number:</label>
+        <input type="number" id="liczba" min="0" max="99" value="1">
+
+        <br>
+
+        <label for="radio1">radio 1</label>
+        <input type="radio" id="radio1" name="wybory">
+        <br>
+        <label for="radio2">radio 2</label>
+        <input type="radio" id="radio2" name="wybory">
+        <br>
+        <label for="radio3">radio 3</label>
+        <input type="radio" id="radio3" name="wybory">
+
+        <br>
+        
+        <label for="select">select:</label>
+        <select id="select">
+            <option value="opcja1">option 1</option>
+            <option value="opcja2">option 2</option>
+            <option value="opcja3">option 3</option>
+        </select>
+
+        <br>
+
+        <label for="checkbox">checkbox:</label>
+        <input type="checkbox" id="checkbox">
+
+        <br>
+
+        <label for="textarea">textarea:</label>
+        <textarea id="textarea" rows="4" cols="16"></textarea>
+
+        <br>
+
+        <label for="plik">file:</label>
+        <input type="file" id="plik">
+
+        <br>
+
+        <label for="kolor">color:</label>
+        <input type="color" id="kolor">
+        
+        <br>
+
+        <input type="submit">
+        <input type="reset">
+    </form>
+    </main>
+</body>
+</html>

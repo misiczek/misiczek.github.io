@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripiter - SQL</title>
+    <link rel="icon" href="../favicon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+
+    <header id="header">
+        <a href="../" id="ripiter">ripiter</a>
+        <nav>
+            <a href="../html/"><button class="menuBtn">HTML</button></a>
+            <a href="../css/"><button class="menuBtn">CSS</button></a>
+            <a href="../js/"><button class="menuBtn">JS</button></a>
+            <a href="../php/"><button class="menuBtn">PHP</button></a>
+            <a href="../sql/"><button class="menuBtn selected">SQL</button></a>
+        </nav>
+    </header>
+    <main>
+        <img src="sqllogo.png" class="logo">
+        <h1>SQL - wprowadzenie</h1>
+        <p>SQL (Structured Query Language) to strukturalny język zapytań, jest standaryzowanym językiem programowania, zaprojektowanym specjalnie do zarządzania i manipulowania relacyjnymi bazami danych. Oferuje systemowy sposób tworzenia, pobierania, aktualizowania oraz usuwania danych z bazy danych.</p>
+        <hr>
+
+        <h1><mark>Uwaga: Na razie to są tylko "notatki"!</mark></h1>
+        <h1>Teoria</h1>
+        <ul>
+            <li>Baza danych - zbiór informacji (danych) zorganizowany jako zestaw tabel powiązanych relacjami.</li>
+            <li>Baza danych składa się z tabel, może ich być wiele w jednej bazie danych.</li>
+            <li>Tabela to miejsce na dane. Składa się z kolumn i wierszy.</li>
+            <li>Rekord to pojedynczy wiersz w tabeli, zestaw pól w niej występujących.</li>
+            <li>Pole to część tabeli przechowująca jednostkowe dane.</li>
+            <li>Rekord nie musi zawierać wszystkich cech obiektu.</li>
+            <li>Klucz podstawowy, klucz główny to jedno lub więcej pól, których wartość jednoznacznie identyfikuje każdy rekord w tabeli. Jest on unikalny.</li>
+            <li>Relacja - powiązanie logiczne występujące między dwoma tabelami realizowane za pomocą klucza podstawowetgo i klucza obcego.</li>
+            <li>Kwerenda (query) - zapytanie do bazy danych</li>
+        </ul>
+    
+    
+        <h1>Zapytania w języku SQL</h1>
+    
+    
+    <pre>
+SELECT * FROM tabela
+SELECT * FROM tabela WHERE id=x
+SELECT * FROM tabela WHERE kolumnatekst="tekst"
+Liczby (int) też można zapisywać w cudzysłowiach
+
+SELECT * FROM tabela WHERE kolumna1=x AND kolumna2=y
+SELECT * FROM tabela WHERE kolumna1=x OR kolumna2=y
+SELECT kolumna1, kolumna2, kolumna3 FROM tabela WHERE kolumna4=x
+SELECT * FROM tabela ORDER BY kolumna1 ASC
+SELECT * FROM tabela ORDER BY kolumna1 DESC
+SELECT * FROM tabela WHERE id>=1 AND id&lt;=10
+SELECT * FROM tabela WHERE id BETWEEN 1 AND 10
+SELECT * FROM tabela WHERE kolumna1 LIKE "abc%"
+SELECT * FROM tabela WHERE kolumna1 LIKE "%abc%"
+UPDATE
+DELETE
+</pre>
+    </main>
+</body>
+</html>
