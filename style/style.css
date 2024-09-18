@@ -1,11 +1,15 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    color:#5A72A0;
-    background-color:#5A72A0;
+    color:#5C5470;
+    background-color:#352F44;
+    padding: 10px;
 }
 
 header{
+    color: #83B4FF;
+    font-weight: bold;
+    font-style: italic;
     width: auto;
     margin: auto;
     text-align: center;
@@ -22,7 +26,7 @@ nav{
 }
 
 main{
-    background-color: white;
+    background-color: #FAF0E6;
     width: 960px;
     margin: auto;
     padding: 20px;
@@ -41,19 +45,14 @@ footer{
 }
 
 hr{
-    border: 1px solid #5A72A0;
+    border: 1px solid #5C5470;
 }
 
 pre{
     font-size: 18px;
-}
-
-#ripiter{
-    font-size: 100px;
-    font-weight: bold;
-    font-style: italic;
-    color:#83B4FF;
-    text-decoration: none;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .logo{
@@ -68,8 +67,8 @@ pre{
 }
 
 .menuBtn{
-    color:#5A72A0;
-    background-color: white;
+    color:#352F44;
+    background-color:#FAF0E6;
     font-size: 1.5em;
     text-decoration: none;
     width: 100px;
@@ -82,8 +81,8 @@ pre{
 }
 
 .selected{
-    background-color: #83B4FF;
-    color:white;
+    background-color:#5C5470;
+    color: #FAF0E6;
     font-weight: bold;
 }
 

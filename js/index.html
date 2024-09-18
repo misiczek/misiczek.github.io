@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ripiter - JS</title>
-    <link rel="icon" href="../favicon.jpg">
+    <title>powtarzacz - JS</title>
+    <link rel="icon" href="../powtarzacz.png">
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <header id="header">
-        <a href="../" id="ripiter">ripiter</a>
+        <a href="../"><img src="../powtarzacz.png" height="125px"></a><br>
         <nav>
             <a href="../html/"><button class="menuBtn">HTML</button></a>
             <a href="../css/"><button class="menuBtn">CSS</button></a>
@@ -22,44 +22,51 @@
     <img class="logo" src="jslogo.png">
     <h1>JavaScript - wprowadzenie</h1>
     JavaScript to język programowania skryptowego najczęściej stosowany na stronach internetowych do zapewniania ich interaktywności, obsługi zdarzeń, walidacji danych wprowadzanych w formularzach oraz tworzenia złożonych efektów wizualnych. Działa on po stronie klienta, jest wykonywany lokalnie na komputerze użytkownika strony internetowej. Jest językiem interpretowanym, czyli takim, który nie wymaga kompilacji (zamiany kody źródłowego na binarny język maszynowy). Kod JavaScriptu jest wczytywany, interpretowany i wykonywany przez interpreter języka zawarty w przeglądarce internetowej.
-
     <hr>
 
     <h1>Zmienne - let, var</h1>
-    Zmienne możemy deklarować za pomocą słów kluczowych let i var. Zaleca się jednak korzystanie z let, gdyż jest to nowszy standard deklarowania zmiennej w JS.
+    Zmienną możemy zadeklarować za pomocą słowa kluczowego let (istnieje również starsza metoda - var, jednak obecnie nie zaleca się jej używania).
     <h4>Przykład:</h4>
-    Zadeklarowanie zmiennej bez przypisania jej wartości domyślnej:
+    Deklaracja zmiennej bez przypisania jej wartości domyślnej:
     <pre>let zmienna1;</pre>
-    <pre>var zmienna2;</pre>
-    Zadeklarowanie zmiennej z przypisaniem jej wartości domyślnej:
-    <pre>let zmienna1 = 1;</pre>
-    <pre>var zmienna2 = "tekst";</pre>
+    Deklaracja zmiennej z przypisaniem jej wartości domyślnej:
+    <pre>let zmienna1 = 1;
+let zmienna2 = "tekst";</pre>
+    Jeśli po zadeklarowaniu zmiennej chcemy przypisać jej inną wartość, nie używamy ponownie słowa let, ponieważ służy ono jedynie do jej deklaracji.
+    <pre>
+let zmienna = 1;
+zmienna = 2;</pre>
 
     <hr>
 
     <h1>Typy danych</h1>
-    Liczba (number), (w JavaScipcie jest tylko jeden typ zmiennej liczbowej, zarówno dla liczb całkowitych jak i zmiennoprzecinkowych):
-    <pre>let zmienna1 = 1;</pre>
+    Liczba (number), - w JavaScipcie jest tylko jeden typ zmiennej liczbowej, zarówno dla liczb całkowitych, jak i zmiennoprzecinkowych:
+    <pre>let zmienna = 1;</pre>
     Ciąg znaków (string):
-    <pre>let zmienna2 = "tekst";</pre>
+    <pre>let zmienna = "tekst";</pre>
     Wartość logiczna (boolean), prawda:
-    <pre>let zmienna3 = true;</pre>
+    <pre>let zmienna = true;</pre>
     Wartość logiczna (boolean), fałsz:
-    <pre>let zmienna4 = false;</pre>
+    <pre>let zmienna = false;</pre>
     Oznaczenie braku wartości:
-    <pre>let zmienna5 = null;</pre>
+    <pre>let zmienna = null;</pre>
     Tablica (array), (omówione dalej):
-    <pre>let zmienna6 = [element1, ..., elementX];</pre>
+    <pre>let zmienna = [element1, ..., elementX];</pre>
     <hr>
 
     <h1>Stałe - const</h1>
+    Wartość stałej, w przeciwieństwie do zmiennej, nie może zostać zmieniona w trakcie wykonywania kodu.
     <h4>Przykład: </h4>
-    <pre>const stala1 = 1;</pre>
-    <pre>const stala2 = "tekst";</pre>
+    Deklaracja stałej z przypisaniem jej liczby 1:
+    <pre>const stala = 1;</pre>
+    Deklaracja stałej z przypisaniem jej ciągu znaków "tekst":
+    <pre>const stala = "tekst";</pre>
 
     <hr>
 
     <h1>Wypisanie danych do konsoli - console.log</h1>
+    <p>console.log wypisuje dane do konsoli przeglądarki internetowej.</p> 
+    <p>Konsola dostępna jest w dowolnej przeglądarce po kliknięciu prawego przycisku myszy na stronie internetowej i wybraniu opcji "Zbadaj"/"Wykonaj inspekcję". Następnie należy odnaleźć zakładkę "Console"/"Konsola".</p>
     <h4>Przykład:</h4>
     Wypisanie tekstu "Hello world!":
     <pre>console.log("Hello world!");</pre>
@@ -70,21 +77,33 @@
     <hr>
 
     <h1>Okna dialogowe przeglądarki - alert, prompt, confirm</h1>
-    alert - informacja dla użytkownika, posiada jedynie przycisk "OK".<br>
-    prompt - okno, które może posłużyć do wprowadzania danych.<br>
-    confirm - okno, wyposażone w dwa przyciski: "OK" oraz "Anuluj", prosi użytkownika o potwierdzenie.
+    alert - Informacja dla użytkownika, posiada jedynie przycisk "OK".<br>
+    prompt - Okno, które służy do wprowadzania danych.<br>
+    confirm - Okno wyposażone w dwa przyciski: "OK" oraz "Anuluj", prosi użytkownika o potwierdzenie.
     <h4>Przykład:</h4>
     alert:
     <pre>alert("Oto komunikat.");</pre>
-    Skrypt, który prosi użytkownika o podanie swojego imienia (prompt) a następnie zwraca je używając alert:
-    <pre>let imie = prompt("Podaj imię:");</pre>
-    <pre>alert(imie);</pre>
-    Skrypt, który prosi użytkownika o potwierdzenie swojego wieku (confirm) a następnie zwraca jego wybór używając console.log:
-    <pre>let wiek = confirm("Czy masz 18 lat?");</pre>
-    <pre>console.log(wiek);</pre>
-    Jeśli użytkownik wybierze "OK" do konsoli zostanie zwrócona wartość "true", natomiast jeśli wybierze opcję "Anuluj" zostanie zwrócona wartość "false"
+    Skrypt, który prosi użytkownika o podanie swojego imienia (prompt), a następnie zwraca je używając alert. 
+    <pre>let imie = prompt("Podaj imię:");
+alert(imie);</pre>
+    Skrypt, który prosi użytkownika o potwierdzenie swojego wieku (confirm), a następnie zwraca jego wybór używając console.log. Jeśli użytkownik wybierze "OK", do konsoli zostanie zwrócona wartość "true", natomiast jeśli wybierze opcję "Anuluj", zwrócona zostanie wartość "false".
+    <pre>let wiek = confirm("Czy masz 18 lat?");
+console.log(wiek);</pre>
 
     <hr>
+
+    <h1>Komentarze</h1>
+    Komentarze są krótką informacją do napisanego kodu. Tekst zawarty w komentarzu nie jest interpretowany przez przeglądarkę. W JavaScripcie dostępne są komentarze liniowe i blokowe.
+    <h4>Przykład:</h4>
+    <pre>
+//To jest komentarz liniowy. Ogranicza się do jednej linii.
+
+/* To jest
+komentarz blokowy.
+Może składać się
+z wielu linii */</pre>
+
+<hr>
 
     <h1 id="operatory">Operatory</h1>
     Dodawanie:
@@ -100,26 +119,26 @@
     Potęgowanie:
     <pre>x ** y</pre>
     Przypisanie dodawania
-    <pre>x += y</pre>
-    <pre>//równoznaczne: x = x + y</pre>
+    <pre>x += y
+//równoznaczne: x = x + y</pre>
     Przypisanie odejmowania:
-    <pre>x -= y</pre>
-    <pre>//równoznaczne: x = x - y</pre>
+    <pre>x -= y
+//równoznaczne: x = x - y</pre>
     Przypisanie mnożenia:
-    <pre>x *= y</pre>
-    <pre>//równoznaczne: x = x * y</pre>
+    <pre>x *= y
+//równoznaczne: x = x * y</pre>
     Przypisanie dzielenia:
-    <pre>x /= y</pre>
-    <pre>//równoznaczne: x = x / y</pre>
+    <pre>x /= y
+//równoznaczne: x = x / y</pre>
     Przypisanie modulo:
-    <pre>x %= y</pre>
-    <pre>//równoznaczne: x = x % y</pre>
+    <pre>x %= y
+//równoznaczne: x = x % y</pre>
     Inkrementacja:
-    <pre>x++</pre>
-    <pre>//równoznaczne: x = x + 1</pre>
+    <pre>x++
+//równoznaczne: x = x + 1</pre>
     Dekrementacja:
-    <pre>x--</pre>
-    <pre>//równoznaczne: x = x - 1</pre>
+    <pre>x--
+//równoznaczne: x = x - 1</pre>
     Porównanie wartości:
     <pre>x == y</pre>
     Porównanie wartości i ich typu:
@@ -140,9 +159,9 @@
     <hr>
 
     <h1>Instrukcja warunkowa - if</h1>
-    <p>if - sprawdza, czy dany warunek jest prawdziwy, jeżeli tak to wykonuje zawarte polecenie.</p>
-    <p>else if - jeśli poprzedni warunek nie został spełniony, else if sprawdza nowy warunek, jeżeli jest prawdziwy, wykonuje go, jeżeli jest fałszywy, przechodzi do następnego else if bądź else.</p>
-    <p>else - wykonuje kod, jeśli wszystkie poprzednie warunki nie zostały spełnione.</p>
+    <p>If sprawdza, czy dany warunek jest prawdziwy, jeżeli tak to wykonuje zawarte polecenie.</p>
+    <p>else if - Jeśli poprzedni warunek nie został spełniony, else if sprawdza nowy warunek, jeżeli jest prawdziwy, wykonuje go, w przeciwnym wypadku przechodzi do następnego else if bądź else.</p>
+    <p>else - Wykonuje kod, jeśli wszystkie poprzednie warunki nie zostały spełnione.</p>
     <h4>Składnia:</h4>
     Tylko if:
     <pre>
@@ -156,10 +175,10 @@ if(warunek1){
     //kod, który wykonuje się, jeśli zostanie spełniony warunek1
 }
 else if(warunek2){
-    //kod, który wykonuje się, jeśli warunek1 nie zostanie spełniony i warunek2 zostanie spełniony
+    //kod, który wykonuje się, jeśli warunek1 nie zostanie spełniony i warunek2 będzie prawdziwy
 }
 else{
-    //kod, który wykonuje się, jeśli wszystkie warunki nie zostaną spełnione
+    //kod, który wykonuje się, jeśli wszystkie warunki nie zostały spełnione
 }
     </pre>
     <h4>Przykład:</h4>
@@ -175,15 +194,14 @@ else if(liczba &lt; 0){
 }
 else{
     alert("Liczba jest równa 0.");
-}
-    </pre>
+}</pre>
 
     <hr>
 
     <h1>Operatory logiczne - &&, ||</h1>
     <p>Operatory logiczne pozwalają łączyć wiele warunków w jednej instrukcji warunkowej.</p>
-    <p>&& - i/oraz, w przypadku, kiedy mamy dwa warunki, oba muszą zostać spełnione.</p>
-    <p>|| - lub, w przypadku, kiedy mamy dwa warunki, przynjamniej jeden musi zostać spełniony.</p>
+    <p>&& - i/oraz, w przypadku, gdy mamy dwa warunki, oba muszą zostać spełnione.</p>
+    <p>|| - lub, w przypadku, gdy mamy dwa warunki, przynjamniej jeden musi zostać spełniony.</p>
     <h4>Składnia:</h4>
     &&:
     <pre>
@@ -196,32 +214,40 @@ if(warunek1 || warunek2){
     //kod, który wykona się po spełnieniu przynajmniej jednego warunku.
 }</pre>
     <h4>Przykład:</h4>
-    &&:<br>
-    Skrypt, który sprawdza, czy wartość zmiennej jest większa od 1 i mniejsza od 10:
+    &&: Skrypt, który sprawdza, czy wartość zmiennej jest większa od 1 i mniejsza od 10:
     <pre>
 let liczba = 5;
 
-if(liczba>1 && liczba&lt;10){
-    alert("Liczba jest poprawna");
+if(liczba > 1 && liczba &lt; 10){
+    alert("Prawidłowa liczba");
 }
 else{
-    alert("Liczba jest spoza zakresu");
+    alert("Nieprawidłowa liczba");
+}</pre>
+    ||: Skrypt, który sprawdza, czy liczba jest mniejsza od 1 lub większa od 10:
+    <pre>
+let liczba = 5;
+
+if(liczba &lt; 1 || liczba > 10){
+    alert("Prawidłowa liczba");
+}
+else{
+    alert("Nieprawidłowa liczba");
 }</pre>
 
     <hr>
 
     <h1>Pętle - while, do while, for</h1>
-    <p>Pętle pozwalają na wykonanie kodu wielokrotną ilość razy.</p>
-    <p>while - wykonuje kod jeśli dany warunek jest spełniony.</p>
-    <p>do while - wykonuje kod przynajmniej raz. Jeśli warunek jest spełniony, wykonuje się dalej.</p>
-    <p>for - pętla, którą najczęściej wykorzystuje się, gdy chcemy wykonać kod określoną ilość razy.</p>
+    <p>Pętle umożliwiają wielokrotne wykonanie tego samego fragmentu kodu.</p>
+    <p>while - Wykonuje kod, jeśli dany warunek jest spełniony.</p>
+    <p>do while - Wykonuje kod przynajmniej raz. Jeśli warunek jest spełniony, pętla wykonuje się ponownie.</p>
+    <p>for - Pętla, którą najczęściej wykorzystuje się, gdy chcemy wykonać kod określoną ilość razy.</p>
     <h4>Składnia:</h4>
     while:
     <pre>
 while(warunek){
     //Kod wykonywany, dopóki warunek jest prawdziwy.
-}
-    </pre>
+}</pre>
     do while:
     <pre>
 do{
@@ -229,23 +255,23 @@ do{
     //Jeśli warunek jest prawdziwy, wykonuje się dalej.
 }while(warunek);</pre>
     for:
+    <p>inicjalizacja_zmiennej - Deklaracja oraz nadanie wartości początkowej zmiennej (najczęściej 0). Zmienna ta pełni rolę licznika pętli.</p>
+    <p>warunek - Pętla będzie się wykonywać, dopóki ten warunek jest spełniony. Zazwyczaj jest to po prostu warunek, że licznik musi być mniejszy od podanej przez nas liczby, która określa, ile razy pętla ma się wykonać.</p>
+    <p>polecenie - Tutaj określamy, co będzie się działo z licznikiem przy każdym okrążeniu pętli. Najczęściej jest to inkrementacja, czyli zwiększenie wartości zmiennej o 1.</p>
     <pre>
 for(inicjalizacja_zmiennej; warunek; polecenie){
     //Kod do wykonania.
 }</pre>
-    <ul>
-        <li><i>inicjalizacja_zmiennej</i> - deklaracja oraz ustawienie wartości początkowej zmiennej (najczęściej 0). Zmienna ta będzie licznikiem pętli.</li>
-        <li><i>warunek</i> - pętla będzie się wykonywać dopóki ten warunek będzie spełniony. Zazwyczaj będzie to po prostu warunek, że nasza zadeklarowana wcześniej zmienna musi być mniejsza od danej przez nas liczby.</li>
-        <li><i>polecenie</i> - Tutaj podajemy co będzie się działo z naszym licznikiem co każde okrążenie pętli. Najczęściej będzie to inkrementacja, czyli zwiększenie wartości zmiennej o 1.</li>
-    </ul>
     <h4>Przykład:</h4>
-    while:<br>kod, który do skutku prosi użytkownika o podanie poprawnej odpowiedzi na wynik działania 2+2:
+    <p>while:</p>
+    <p>Pętla przestanie się wykonywać, gdy użytkownik poda poprawną odpowiedź na działanie 2+2:</p>
     <pre>
 let odp;
 while(odp != 4){
     odp = prompt("Ile to jest 2+2?");
 }</pre>
-    for:<br>kod, który wykona się 5 razy, za każdym razem wypisując do konsoli aktualną wartość i. W konsoli będziemy mogli zobaczyć cyfry od 0-4 (a nie 5), gdyż pętla rozpoczyna od wartości 0 a ostatnią możliwą wartością jest 4 (i ma być mniejsze od 5). Lecz mimo tego kod faktycznie wykonał się 5 razy gdyż:
+    <p>for:</p>
+    <p>Kod, który wykona się 5 razy, za każdym razem wypisując do konsoli aktualną wartość zmiennej i. W konsoli zobaczymy cyfry od 0 do 4 (a nie 5), ponieważ pętla rozpoczyna od wartości 0, a ostatnią możliwą wartością jest 4 (warunek i &lt; 5). Mimo to kod faktycznie wykonał się 5 razy, ponieważ:</p>
     <ul>
         <li>1 obieg pętli - i = 0</li>
         <li>2 obieg pętli - i = 1</li>
@@ -261,8 +287,9 @@ for(let i = 0; i &lt; 5; i++){
     <hr>
 
     <h1>Tablice</h1>
-    <p>Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w JS rodzaju (nawet inne tablice). Deklarujemy je tak samo jak zmienne i stałe.</p>
+    <p>Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w JS typu (nawet inne tablice). Deklarujemy je tak samo jak zmienne i stałe. </p>
     <h4>Składnia:</h4>
+    Deklaracja tablicy:
     <pre>const tablica1 = [element1, ..., elementX];</pre>
     <h4>Przykład:</h4>
     <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
@@ -271,18 +298,16 @@ for(let i = 0; i &lt; 5; i++){
 const tablica1 = [1,2,3];
 let tablica2 = [4,5,6];
 //Linijka poniżej nie wykona się i wypisze w konsoli błąd.
-tablica1 = tablica2;
-    </pre>
+tablica1 = tablica2;</pre>
 
     <hr>
 
     <h1>Metody pracy z tablicami i modyfikacja tablic</h1>
     <h2>Podstawowe metody:</h2>
-    <h4>Składnia:</h4>
-    Długość tablicy (ilość jej elementów):
-    <pre>tablica.length</pre>
-    Przekształcenie tablicy na napis:
-    <pre>tablica.toString()</pre>
+    Zwrócenie długości tablicy (liczby jej elementów):
+    <pre>let dlugosc = tablica.length;</pre>
+    Zwrócenie tablicy przekształconej w ciąg znaków:
+    <pre>let tablicaString = tablica.toString();</pre>
     Wstawianie elementu na końcu tablicy:
     <pre>tablica.push(element);</pre>
     Wstawianie elementu na początku tablicy:
@@ -292,68 +317,51 @@ tablica1 = tablica2;
     Usuwanie pierwszego elementu tablicy:
     <pre>tablica.shift();</pre>
     Łączenie tablic:
-    <pre></pre>
+    <pre>let polaczoneTablice = tablica1.concat(tablica2);</pre>
     Sortowanie elementów tablicy:
     <pre>tablica.sort();</pre>
     Odwrócenie kolejności elementów w tablicy:
     <pre>tablica.reverse();</pre>
-    <h4>Przykład:</h4>
-    Nasza tablica:
-    <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
-    Wypisanie do konsoli liczby elementów tablicy:
-    <pre>console.log(lista_zakupow.length);
-//Do konsoli zostanie wypisana liczba 5.</pre>
-    Wypisanie do konsoli tablicy jako tekst:
-    <pre>console.log(lista_zakupow.toString());</pre>
-    Wstawienie na koniec tablicy elementu "Piwo":
-    <pre>lista_zakupow.push("Piwo");</pre>
-    Wstawienie na początek tablicy elementu "Piwo":
-    <pre>lista_zakupow.unshift("Piwo");</pre>
     <h2>Metoda splice:</h2>
-    splice - 
+    Metoda splice służy do usuwania, dodawania lub zamieniania elementów w tablicy.
     <h4>Składnia:</h4>
+    <p>indeks - Indeks elementu, od którego chcemy zacząć edytować tablicę.</p>
+    <p>liczba - Liczba elementów, którą chcemy usunąć od elementu z podanym przez nas wcześniej indeksem początkowym (włącznie z nim!).</p>
+    <p>element1, ..., elementX - Elementy, które chcemy dodać.</p>
     <pre>tablica.splice(indeks, liczba, element1, ..., elementX);</pre>
-    <ul>
-        <li><i>indeks</i> - Indeks elementu od którego chcemy zacząć edytować tablicę.</li>
-        <li><i>liczba</i> - Liczba elementów, którą chcemy usunąć od elementu z podanym przez nas wcześniej indeksem początkowym (WŁĄCZNIE Z NIM).</li>
-        <li><i>element1, ..., elementX</i> - Elementy, które chcemy dodać.</li>
-    </ul>
+
     <h4>Przykład:</h4>
-    Nasza tablica:
+    Tablica:
     <pre>let lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
     Usuwanie wszystkich elementów z tablicy:
+    <p>Został tutaj zadeklarowany jedynie indeks elementu, od którego chcemy zacząć, w tym przypadku od samego początku tablicy. Jeśli nie wprowadziliśmy kolejnego argumentu, czyli liczby elementów, które chcemy usunąć, metoda splice domyślnie usuwa wszystkie następne elementy.</p>
     <pre>lista_zakupow.splice(0);</pre>
-    Został tutaj zadeklarowany jedynie indeks elementu, od którego chcemy zacząć, w tym przypadku od samego początku tablicy (indeks 0 jest pierwszy). Jeśli nie wprowadziliśmy kolejnego argumentu, czyli liczby elementów, które chcemy usunąć, metoda splice domyślnie usuwa wszystkie następne elementy.<br><br>
-    Usuwanie wszystkiego począwszy od drugiego elementu, który ma indeks 1 (WŁĄCZNIE Z NIM):
+    Usuwanie wszystkiego, zaczynając od drugiego elementu (indeks 1):
     <pre>lista_zakupow.splice(1);
 //W tym przypadku w tablicy zostanie jedynie element "Mleko".</pre>
-    Usuwanie jednego elementu począwszy od elementu trzeciego:
+    Usuwanie jednego elementu, zaczynając od elementu trzeciego:
     <pre>lista_zakupow.splice(2, 1);
 //W tym przypadku tablica będzie miała postać ["Mleko", "Chleb", "Sok", "Masło"]</pre>
-    Wstawianie na początku elementów "Piwo", "Gazeta":
+    Wstawianie na początku tablicy elementów "Piwo", "Gazeta":
+    <p>Nowe elementy zostały wstawione w miejsce elementu pierwszego, lecz nie został on usunięty ze względu na drugi argument o wartości 0.</p>
     <pre>lista_zakupow.splice(0, 0, "Piwo", "Gazeta");
 //Tablica: ["Piwo", "Gazeta", "Mleko", "Chleb", "Jajka", "Sok", "Masło"]</pre>
-    Nowe elementy zostały wstawione w miejsce elementu pierwszego o indeksie 0, lecz nie został on usunięty ze względu na drugi argument o wartości 0.<br><br>
-    Wstawianie elementów "Piwo", "Gazeta" zaczynając od elementu trzeciego:
+    Wstawianie elementów "Piwo", "Gazeta", zaczynając od elementu trzeciego:
     <pre>lista_zakupow.splice(2, 0, "Piwo", "Gazeta");
 //Tablica: ["Mleko", "Chleb", "Piwo", "Gazeta", "Jajka", "Sok", "Masło"]</pre>
     Usunięcie dwóch elementów i wstawienie "Piwo", "Gazeta" zaczynając od elementu trzeciego:
     <pre>lista_zakupow.splice(2, 2, "Piwo", "Gazeta");
 //Tablica: ["Mleko", "Chleb", "Piwo", "Gazeta", "Masło"]</pre>
     <h2>Metoda concat - łączenie tablic</h2>
-    Metoda concat pozwala nam na łączenie tablic oraz dodawanie do nich nowych elementów.
+    Metoda concat pozwala na łączenie tablic oraz dodawanie do nich nowych elementów.
     <h4>Składnia:</h4>
-    Jeśli chcemy złączyć tablice:
+    <p>Złączenie tablic:</p>
+    <p>zlaczoneTablice - Tablica, do której przypiszemy wartość złączonych tablic - tablica1 i tablica2.</p>
     <pre>const zlaczoneTablice = tablica1.concat(tablica2);</pre>
-    <ul>
-        <li><i>zlaczoneTablice</i> - Tablica, do której przypiszemy wartość złączonych tablic - tablica1 i tablica2.</li>
-    </ul>
     <br>
-    Jeśli chcemy złączyć tablicę i elementy:
+    <p>Złączenie tablic i dodanie elementów:</p>
+    <p>tablicaPlusElementy - Tablica, do której przypiszemy wartość złączonej tablicy1 z elementami.</p>
     <pre>const tablicaPlusElementy = tablica1.concat(element1, ..., elementX);</pre>
-    <ul>
-        <li><i>tablicaPlusElementy</i> - Tablica, do której przypiszemy wartość złączonej tablicy1 z elementami.</li>
-    </ul>
     <h4>Przykład:</h4>
     Łączenie tablic:
     <pre>
@@ -362,43 +370,98 @@ const lista_zakupow2 = ["Jajka", "Sok"];
 
 const zlaczoneListy = lista_zakupow1.concat(lista_zakupow2);
 
-//Tablica zlaczoneListy będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]
-    </pre>
+//Tablica zlaczoneListy będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]</pre>
     Łączenie tablicy i elementów:
     <pre>
-const lista_zakupow = ["Mleko", "Chleb"];
-       
+const lista_zakupow = ["Mleko", "Chleb"];  
 const lista_zakupow2 = lista_zakupow.concat("Jajka", "Sok");
         
-//Tablica lista_zakupow2 będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]
-    </pre>
+//Tablica lista_zakupow2 będzie miała postać: ["Mleko", "Chleb", "Jajka", "Sok"]</pre>
     
     <hr>
 
     <h1>Pętle i tablice</h1>
     <h4>Przykład:</h4>
-    Nasza tablica:
-    <pre>let imiona = ["Tomasz", "Karol", "Natalia];</pre>
+    Tablica:
+    <pre>const imiona = ["Tomasz", "Karol", "Natalia];</pre>
     <p>Przykłady pętli, które przejdą przez każdy element tablicy i wypiszą go do konsoli:</p>
-    Zwykła pętla for:
+    Wykorzystując pętlę for:
     <pre>
 for (let i = 0; i &lt; imiona.length; i++){
     console.log(imiona[i]);
 }</pre>
-    Pętla for..of
+    Wykorzystując pętlę for..of:
     <pre>
 for (let imie of imiona){
     console.log(imie);
 }</pre>
-    Pętla forEach
+    Wykorzystując pętlę forEach:
     <pre>
 imiona.forEach(
     e=>console.log(e)
 )</pre>
+    
+    <hr>
 
-    <br>
-    Do zrobienia:
-    ||
+    <h1>Funkcje</h1>
+    <p>Funkcje są blokami kodu, który może zostać wykorzystany wielokrotnie w całym skrypcie. Zwarty w funkcji kod jest wykonywany tylko po jej wywołaniu.</p>
+    <p>W JavaScipcie występują dwa typy funkcji - klasyczne i strzałkowe.</p>
+    <h2>Funkcje klasyczne</h2>
+    <p>Ten rodzaj funkcji w budowie przypomina te z innych języków programowania.</p>
+    <h4>Składnia:</h4>
+    Deklaracja funkcji:
+    <pre>
+function nazwaFunkcji(parametry){
+    //Kod, który funkcja ma wykonać.
+}</pre>
+    Wywołanie funkcji:
+    <pre>nazwaFunkcji(parametry);</pre>
+    <h4>Przykład:</h4>
+    Funkcja, która przyjmuje imię oraz nazwisko jako parametry i wypisuje do konsoli przywitanie:
+    <pre>
+function powiedzCzesc(imie, nazwisko){
+    console.log("Cześć", imie, nazwisko + "!");
+}
+
+powiedzCzesc("Gniewomir", "Bąk");</pre>
+return - Określa wartość, którą funkcja ma zwrócić. Jeśli wywołanie funkcji przypiszemy do zmiennej, to wtedy wartość zwrócona zostanie wpisana do tej zmiennej. Instrukcja return nie jest obowiązkowa, lecz zazwyczaj chcemy, aby funkcja zwracała jakąś wartość.
+    <p>Funkcja, która przyjmuje parametry w postaci dwóch liczb, a następnie zwraca wynik ich dodawania:</p>
+<pre>
+function dodaj(a, b){
+    return a+b;
+}
+
+let wynik = dodaj(2,4);
+
+console.log(wynik);
+//Do konsoli zostanie wypisana zawartość zmiennej wynik, czyli 6.</pre>
+
+    <h2>Funkcje strzałkowe</h2>
+    <p>Funkcje strzałkowe są skróconym zapisem funkcji klasycznej.</p>
+    <h4>Składnia:</h4>
+    Deklaracja funkcji bez parametrów:
+    <pre>let nazwaFunkcji = () => //Kod do wykonania;</pre>
+    Deklaracja funkcji z jednym parametrem:
+    <pre>let nazwaFunkcji = parametr => //Kod do wykonania;</pre>
+    Deklaracja funkcji z wieloma parametrami:
+    <pre>let nazwaFunkcji = (parametr1, ..., parametrX) => //Kod do wykonania;</pre>
+    Funkcja strzałkowa z wieloma wierszami kodu:
+    <pre>
+let nazwaFunkcji = () =>{
+    //Pierwszy wiersz kodu.
+    //Dowolna liczba wierszy kodu.
+}</pre>
+    <h4>Przykład:</h4>
+    Funkcja, która przyjmuje imię oraz nazwisko jako parametry i wypisuje do konsoli przywitanie:
+<pre>let powiedzCzesc = (imie, nazwisko) => console.log("Cześć", imie, nazwisko + "!");
+powiedzCzesc("Gniewomir", "Bąk");</pre>
+    <p><b>Uwaga: </b>W funkcjach strzałkowych nie musimy (choć możemy) stosować instrukcji return, aby zwrócić wartość.</p>
+    <p>Funkcja, która przyjmuje parametry w postaci dwóch liczb, a następnie zwraca wynik ich dodawania:</p>
+    <pre>
+let dodawanie = (a,b) => a+b;
+let wynik = dodawanie(2,4);
+console.log(wynik);
+//Do konsoli zostanie wypisana zawartość zmiennej wynik, czyli 6.</pre>
     </main>
 </body>
 </html>

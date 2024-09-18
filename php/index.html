@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ripiter - PHP</title>
-    <link rel="icon" href="../favicon.jpg">
+    <title>powtarzacz - PHP</title>
+    <link rel="icon" href="../powtarzacz.png">
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <header id="header">
-        <a href="../" id="ripiter">ripiter</a>
+        <a href="../"><img src="../powtarzacz.png" height="125px"></a>
         <nav>
             <a href="../html/"><button class="menuBtn">HTML</button></a>
             <a href="../css/"><button class="menuBtn">CSS</button></a>
@@ -34,20 +34,19 @@
     <h1>Zmienne</h1>
     Zmienna to miejsce w pamięci komputera, które przechowuje nadaną mu wartość. W PHP nazwy zmiennych zapisuje się z $ na początku.
     <h4>Składnia:</h4>
-    Nadanie wartości zmiennej:
+    Przypisanie wartości zmiennej:
     <pre>$zmienna = wartosc;</pre>
     <h4>Przykład:</h4>
-    Nadanie zmiennej wartości tekstowej "Hello world":
-    <pre>$tekst = "Hello world";</pre>
-    Nadanie zmiennej wartości liczbowej 1:
-    <pre>$liczba = 1;</pre>
+    Przypisanie wartości zmiennej:
+    <pre>$tekst = "Hello world";
+$liczba = 1;</pre>
     
     <hr>
     
     <h1>Typy danych</h1>
     Ciąg znaków (string):
     <pre>$zmienna = "Hello world";</pre>
-    Liczba całkowita (intiger):
+    Liczba całkowita (integer):
     <pre>$zmienna = 1;</pre>
     Liczba zmiennoprzecinkowa (float):
     <pre>$zmienna = 5.5;</pre>
@@ -72,6 +71,19 @@
     Wypisanie znacznika HTML, w tym przypadku nagłówka pierwszego stopnia:
     <pre>echo "&lt;h1>Nagłówek&lt;/h1>";</pre>
         
+    <hr>
+
+    <h1>Komentarze</h1>
+    Komentarze są krótką informacją do napisanego kodu. Tekst zawarty w komentarzu nie jest interpretowany. W PHP dostępne są komentarze liniowe i blokowe.
+    <h4>Przykład:</h4>
+    <pre>
+//To jest komentarz liniowy. Ogranicza się do jednej linii.
+
+/* To jest
+komentarz blokowy.
+Może składać się
+z wielu linii */</pre>
+
     <hr>
 
     <h1>Operatory</h1>
@@ -115,8 +127,7 @@ elseif($liczba &lt; 0){
 }
 else{
     echo "Liczba jest równa 0.";
-}
-    </pre>
+}</pre>
     
     <hr>
 
@@ -268,58 +279,78 @@ foreach($tablica as $element){
     <hr>
 
     <h1>Tablice</h1>
-    Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w PHP typu (nawet inne tablice). Deklarujemy je tak samo jak zmienne.
+    Tablice są zbiorami danych. Mogą przechowywać dane wszelkiego, dostępnego w PHP typu (nawet inne tablice). Deklarujemy je tak samo jak zmienne. Tablice mogą być indeksowane numerycznie lub asocjacyjne.
+    <p>Tablica indeksowana numerycznie - Podstawowy typ tablicy w PHP. Każdy element w tablicy posiada indeks w postaci liczby. Pierwszy element w tablicy ma indeks 0, drugi element ma indeks 1 itd.</p>
+    <p>Tablica asocjacyjna - Ten typ tablicy zamiast indeksów numerycznych używa identyfikatorów znakowych (kluczy).</p>
     <h4>Składnia:</h4>
-    Deklaracja zmiennej i przypisanie jej wartości w postacji tablicy z elementami.
-    <pre>$zmienna = [element1, ..., elementX];</pre>
-    <b>Uwaga:</b> przed PHP 5.4 (2012) występowała jedynie składnia poniżej. Obecnie jednak nie zaleca się jej używania.
-    <pre>$zmienna = array(element1, ..., elementX);</pre>
+    Deklaracja tablicy (domyślnie indeksowanej numerycznie):
+    <pre>$tablica = [element1, ..., elementX];</pre>
+    Deklaracja tablicy asocjacyjnej:
+    <pre>$tablica = ["klucz1" => element1, "..." => ..., "kluczX" => elementX];</pre>
+    <b>Uwaga:</b> przed PHP 5.4 (2012) występowała jedynie składnia poniżej. Obecnie jednak zaleca się używanie tej nowszej.
+    <pre>$tablica = array(element1, ..., elementX);</pre>
     <h4>Przykład:</h4>
+    Tablica indeksowana numerycznie:
     <pre>$lista_zakupow = ["Mleko", "Chleb", "Jajka", "Sok", "Masło"];</pre>
-    
-    Aby zwrócić zawartość tablicy do przeglądarki, możemy użyć print_r (echo w tym przypadku nie zadziała):
+    Tablica asocjacyjna:
+    <pre>$osoba = ["imie" => "Jan", "nazwisko" => "Kowalski", "wiek" => 30];</pre>
+    <br>
+    Aby wypisać zawartość tablicy do przeglądarki, możemy użyć print_r (echo w tym przypadku nie zadziała).
+    <p>Wypisanie całej tablicy:</p>
     <pre>
 print_r($tablica);
 //W przeciwieństwie do echo, nawiasy są wymagane!</pre>
+    <p>Wypisanie elementu z tablicy o indeksie 1:</p>
+    <pre>print_r($tablica[1]);</pre>
+    <p>Wypisanie elementu z tablicy o kluczu "imie":</p>
+    <pre>print_r($tablica["imie"]);</pre>
 
     <hr>
 
     <h1>Metody pracy z tablicami i modyfikacja tablic</h1>
-    <h4>Składnia:</h4>
+
     Dodawanie jednego lub wielu elementów na początku tablicy:
-    <pre>array_unshift($tablica, element1, ..., elementX)</pre>
+    <pre>array_unshift($tablica, element1, ..., elementX);</pre>
     Dodawanie jednego lub wielu elementów na końcu tablicy:
-    <pre>array_push($tablica, element1, ..., elementX)</pre>
+    <pre>array_push($tablica, element1, ..., elementX);</pre>
     Usuwa pierwszy element tablicy:
-    <pre>array_shift($tablica)</pre>
+    <pre>array_shift($tablica);</pre>
     Usuwa ostatni element tablicy:
     <pre>array_pop($tablica);</pre>
     Usuwa powtarzające się wartości z tablicy i zwraca nową tablicę:
-    <pre>array_unique($tablica)</pre>
+    <pre>$zmienna = array_unique($tablica);</pre>
     Łączy dwie lub więcej tablic i zwraca nową, połączoną tablicę:
-    <pre>array_merge($tablica1, ..., $tablicaX)</pre>
+    <pre>$zmienna = array_merge($tablica1, ..., $tablicaX);</pre>
     Sprawdza istnienie podanego klucza w tablicy. Jeśli istnieje, zwraca true, w przeciwnym wypadku zwraca false:
-    <pre>array_key_exists(nazwa_klucza, $tablica)</pre>
-    Przeszukuje wartości umieszczone w tablicy i zwraca klucz dla pierwszego znalezionego dopasowania. Jeśli w miejscu opcjonalnego argumenu czyDokladnie wstawimy true, dopasowanie musi uwzględniać typ danych (jeśli nie wpiszemy nic, domyślnie będzie to równoznaczne z wpisaniem false):
-    <pre>array_search(wartosc, $tablica, czyDokladnie)</pre>
+    <pre>$zmienna = array_key_exists(nazwa_klucza, $tablica);</pre>
+    Przeszukuje wartości umieszczone w tablicy i zwraca klucz dla pierwszego znalezionego dopasowania. Jeśli zadeklarujemy opcjonalny argument czyDokladnie jako true, dopasowanie musi uwzględniać typ danych (jeżeli nie wpiszemy nic, domyślnie będzie to równoznaczne z false):
+    <pre>$zmienna = array_search(wartosc, $tablica, czyDokladnie);</pre>
     Sprawdza, czy dana wartość znajduje się w tablicy. Jeśli tak, zwraca true, w przeciwnym razie zwraca false:
-    <pre>in_array(wartosc, $tablica)</pre>
+    <pre>$zmienna = in_array(wartosc, $tablica);</pre>
     Zwraca liczbę elementów tablicy:
-    <pre>count($tablica)</pre>
-    Wybiera losowy element tablicy i zwraca jego klucz. Jeśli podamy opcjonanly argument iloscElementow, zostanie zwrócona tablica z zadeklarowaną przez nas ilością losowych elementow (jeśli nie podamy tego argumenu, oczywiście zostanie zwrócony tylko jeden element):
-    <pre>array_rand($tablica, iloscElementow)</pre>
+    <pre>$zmienna = count($tablica);</pre>
+    Wybiera losowy element tablicy i zwraca jego klucz. Jeśli podamy opcjonanly argument iloscElementow, zostanie zwrócona tablica z zadeklarowaną przez nas ilością losowych elementow (jeśli nie podamy tego argumenu, zostanie zwrócony tylko jeden element):
+    <pre>$zmienna = array_rand($tablica, iloscElementow);</pre>
     Zwraca wartości w tablicy w postaci jednego ciąg znaków (z pominięciem kluczy). Jeśli podamy opcjonalny argument separator, wartości zostaną rozdzielone podanym separatorem np. ", ":
-    <pre>implode(separator, $tablica)</pre>
-    Przekształca ciąg znaków w tablicę indeksowaną. Separatorem jest znak oddzielający poszczególne elementy łańcucha np. " ". Opcjonalny parametr $limit ogranicza liczbę elementów tablicy do podanej wartości:
-    <pre>explode($separator, $tekst, $limit)</pre>
-    <h1>Sortowanie tablic - sort, rsort</h1>
-    <p>sort - sortuje tablicę rosnąco.</p>
-    <p>rsort - sortuje tablicę malejąco.</p>
-    <h4>Składnia:</h4>
-    sort:
-    <pre>sort($tablica)</pre>
-    rsort:
-    <pre>rsort($tablica)</pre>
+    <pre>$zmienna = implode(separator, $tablica);</pre>
+    Zwraca przekształcony ciąg znaków w formie tablicy indeksowanej. Separatorem jest znak oddzielający poszczególne elementy łańcucha np. " " (spacja). Opcjonalny parametr limit ogranicza liczbę elementów tablicy do podanej wartości:
+    <pre>$zmienna = explode(separator, $tekst, limit);</pre>
+    
+    <hr>
+    
+    <h1>Sortowanie tablic</h1>
+    Sortuje tablicę rosnąco:
+    <pre>sort($tablica);</pre>
+    Sortuje tablicę malejąco:
+    <pre>rsort($tablica);</pre>
+    Sortuje tablicę rosnąco według wartości z zachowaniem kluczy:
+    <pre>asort($tablica);</pre>
+    Sortuje tablicę malejąco według wartości z zachowaniem kluczy:
+    <pre>arsort($tablica);</pre>
+    Sortuje tablicę rosnąco według kluczy z zachowaniem wartości:
+    <pre>ksort($tablica);</pre>
+    Sortuje tablicę malejąco według kluczy z zachowaniem wartości:
+    <pre>krsort($tablica);</pre>
     <h4>Przykład:</h4>
     sort:
     <pre>
@@ -337,7 +368,7 @@ print_r($liczby);
     <hr>
 
     <h1>Funkcje - function</h1>
-    Funckje są blokami kodu, który może zostać wykorzystany wielokrotnie w całym skrypcie. Zwarty w funkcji kod jest wykonywany tylko po jej wywołaniu.
+    Funkcje są blokami kodu, który może zostać wykorzystany wielokrotnie w całym skrypcie. Zwarty w funkcji kod jest wykonywany tylko po jej wywołaniu.
     <h4>Składnia:</h4>
     Deklaracja funkcji:
     <pre>
@@ -347,16 +378,17 @@ function nazwa_funkcji(parametry){
     Wywołanie funkcji:
     <pre>nazwa_funkcji(parametry);</pre>
     <h4>Przykład:</h4>
+    return - Określa wartość, którą funkcja ma zwrócić. Jeśli wywołanie funkcji przypiszemy do zmiennej, to wtedy wartość zwrócona zostanie wpisana do tej zmiennej. Instrukcja return nie jest obowiązkowa, lecz zazwyczaj chcemy, aby funkcja zwracała jakąś wartość.
     <pre>
 function oblicz_koszt($cena, $liczba){
     return $cena * $liczba;
 }
 
-$suma = oblicz_koszt(3, 5);
-    </pre>
+$koszt = oblicz_koszt(3, 5);
+//Do zmiennej $koszt zostanie przypisany wynik mnożenia 3 i 5, czyli 15.</pre>
     <h2>Zwracanie wielu wartości</h2>
     <h4>Przykład:</h4>
-    Funckja przyjmuje dwa parametry, w tym przypadku dwie liczby i zwraca wykonane na nich działania w postaci tablicy asocjacyjnej.
+    Funkcja przyjmuje dwa parametry, w tym przypadku dwie liczby i zwraca wykonane na nich działania w postaci tablicy asocjacyjnej.
     <pre>
 function kalkulator($a, $b){
     $dzialania = [
@@ -369,7 +401,8 @@ function kalkulator($a, $b){
 }
 
 $wyniki = kalkulator(5,2);
-echo $wyniki['odejmowanie'];</pre>
+echo $wyniki['odejmowanie'];
+//Zostanie wypisany wynik odejmowania 5 i 2, czyli 3.</pre>
     <h2>Argumenty nazwane (tylko od PHP 8)</h2>
     <h4>Przykład:</h4>
     Podczas wywoływania funkcji, jej parametry podajemy wraz z ich nazwami (ważne: bez $), przez co nie musimy ich podawać w odpowiedniej kolejności.
@@ -378,16 +411,15 @@ function oblicz_kwote($cena, $liczba){
     return $cena * $liczba;
 }
 
-$suma = oblicz_kwote(liczba: 2, cena: 2);</pre>
-    <h4>Deklarowanie typów argumentów i wartości zwracanych</h4>
-    Raczej bardziej zaawansowana rzecz i potrzebna tylko w specyficznych przypadkach, ale warto wspomnieć.
+$kwota = oblicz_kwote(liczba: 2, cena: 2);</pre>
+    <h2>Deklarowanie typów argumentów i wartości zwracanych</h2>
+    Bardziej zaawansowana rzecz i potrzebna tylko w specyficznych przypadkach, ale warto wspomnieć.
     <h4>Przykład:</h4>
-    Przy każdym parametrze mamy zadeklarowany jego typ, w tym przypadku liczba całkowita (int - intiger). Po nawiasie z parametrami występuje ": int", czyli deklarację typu zwracanej przez funckję wartości.
+    Przy każdym parametrze mamy zadeklarowany jego typ, w tym przypadku liczba całkowita (int - integer). Po nawiasie z parametrami występuje ": int", co oznacza deklarację typu zwracanej przez funkcję wartości.
     <pre>
 function oblicz_kwote(int $cena, int $liczba): int{
     return $cena * $liczba;
 }</pre>
-    
     </main>
     
 </body>
