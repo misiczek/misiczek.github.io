@@ -243,12 +243,11 @@ echo $czyDzisiajPoniedzialek;
 </pre>
     <hr>
 
-    <h1>Pętle - while, do while, for, foreach</h1>
+    <h1>Pętle - while, do while, for</h1>
     <p>Pętle umożliwiają wielokrotne wykonanie tego samego fragmentu kodu.</p>
     <p>while - Wykonuje kod, jeśli dany warunek jest spełniony.</p>
     <p>do while - Wykonuje kod przynajmniej raz. Jeśli warunek jest spełniony, pętla wykonuje się ponownie.</p>
     <p>for - Pętla, którą najczęściej wykorzystuje się, gdy chcemy wykonać kod określoną ilość razy.</p>
-    <p>foreach - Pętla najczęściej stosowana do wykonania kodu dla każdego elementu tablicy.</p>
     <h4>Składnia:</h4>
     while:
     <pre>
@@ -275,7 +274,31 @@ for(inicjalizacja_zmiennej; warunek; polecenie){
 foreach($tablica as $element){
     //Kod do wykonania.
 }</pre>
+    <h4>Przykład:</h4>
+    <p>while:</p>
+    <p>Pętla, która wypisze "Hello world" 5 razy:</p>
+    <pre>
+$i = 0;
 
+while($i &lt; 5){
+    echo "Hello world&lt;br>";
+    $i++;
+}</pre>
+    <p>do while:</p>
+    <p>To samo co wcześniej, ale wykorzystując pętlę do while:</p>
+    <pre>
+$i = 0;
+
+do{
+    echo "Hello world&lt;br>";
+    $i++;
+}while($i &lt; 5);</pre>
+    <p>for:</p>
+    <p>Pętla, która wykona się 5 razy, za każdym razem wypisując aktualną wartość zmiennej $i. W przeglądarce zobaczymy liczby od 0 do 4 (a nie 5), ponieważ pętla rozpoczyna od wartości 0, a ostatnią możliwą wartością jest 4 (warunek $i &lt; 5).</p>
+    <pre>
+for($i = 0; $i &lt; 5; $i++){
+    echo $i."&lt;br>";
+}</pre>
     <hr>
 
     <h1>Tablice</h1>
@@ -365,6 +388,23 @@ rsort($liczby);
 print_r($liczby);
 //Do przeglądarki zostanie zwrócona zawartość tablicy w kolejności: 89, 53, 34, 12.</pre>
     
+    <hr>
+
+    <h1>Pętle i tablice</h1>
+    <h4>Przykład:</h4>
+    Tablica:
+    <pre>$imiona = ["Tomasz", "Karol", "Natalia"];</pre>
+    <p>Przykłady pętli, które iterują przez każdy element tablicy i wypisują go do konsoli:</p>
+    Wykorzystując pętlę for:
+    <pre>
+for ($i = 0; $i&lt;count($imiona); $i++){
+    echo $imiona[$i]."&lt;br>";
+}</pre>
+    Wykorzystując pętlę foreach:
+    <pre>
+foreach($imiona as $imie){
+    echo $imie."&lt;br>";
+}</pre>
     <hr>
 
     <h1>Funkcje - function</h1>

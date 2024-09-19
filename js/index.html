@@ -270,15 +270,15 @@ let odp;
 while(odp != 4){
     odp = prompt("Ile to jest 2+2?");
 }</pre>
+    <p>do while:</p>
+    <p>Ten sam skrypt co wcześniej, ale z wykorzystaniem pętli do while:</p>
+    <pre>
+let odp;
+do{
+    odp = prompt("Ile to jest 2+2?");
+}while(odp != 4);</pre>
     <p>for:</p>
-    <p>Kod, który wykona się 5 razy, za każdym razem wypisując do konsoli aktualną wartość zmiennej i. W konsoli zobaczymy cyfry od 0 do 4 (a nie 5), ponieważ pętla rozpoczyna od wartości 0, a ostatnią możliwą wartością jest 4 (warunek i &lt; 5). Mimo to kod faktycznie wykonał się 5 razy, ponieważ:</p>
-    <ul>
-        <li>1 obieg pętli - i = 0</li>
-        <li>2 obieg pętli - i = 1</li>
-        <li>3 obieg pętli - i = 2</li>
-        <li>4 obieg pętli - i = 3</li>
-        <li>5 obieg pętli - i = 4</li>
-    </ul>
+    <p>Pętla, która wykona się 5 razy, za każdym razem wypisując do konsoli aktualną wartość zmiennej i. W konsoli zobaczymy liczby od 0 do 4 (a nie 5), ponieważ pętla rozpoczyna od wartości 0, a ostatnią możliwą wartością jest 4 (warunek i &lt; 5).</p>
     <pre>
 for(let i = 0; i &lt; 5; i++){
     console.log(i);
@@ -383,8 +383,8 @@ const lista_zakupow2 = lista_zakupow.concat("Jajka", "Sok");
     <h1>Pętle i tablice</h1>
     <h4>Przykład:</h4>
     Tablica:
-    <pre>const imiona = ["Tomasz", "Karol", "Natalia];</pre>
-    <p>Przykłady pętli, które przejdą przez każdy element tablicy i wypiszą go do konsoli:</p>
+    <pre>const imiona = ["Tomasz", "Karol", "Natalia"];</pre>
+    <p>Przykłady pętli, które iterują przez każdy element tablicy i wypisują go do konsoli:</p>
     Wykorzystując pętlę for:
     <pre>
 for (let i = 0; i &lt; imiona.length; i++){
