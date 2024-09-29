@@ -461,7 +461,116 @@ $kwota = oblicz_kwote(liczba: 2, cena: 2);</pre>
 function oblicz_kwote(int $cena, int $liczba): int{
     return $cena * $liczba;
 }</pre>
-    </main>
+
+    <hr>
+
+    <h1>Operacje na ciągach znaków</h1>
+    Zwraca liczbę znaków w łańcuchu:
+    <pre>strlen($string)</pre>
+    Zwraca liczbę słow w łańcuchu:
+    <pre>str_word_count($string)</pre>
+    Zwraca położenie pierwszego dopasowania podłańcucha (z uwzględnieniem wielkości znaków):
+    <pre>strpos($string, $substring)</pre>
+    Zwraca położenie pierwszego dopasowania podłańcucha (bez uwzględnienia wielkości znaków):
+    <pre>stripos($string, $substring)</pre>
+    Zwraca położenie ostatniego dopasowania podłańcucha (z uwzględnieniem wielkości znaków):
+    <pre>strrpos($string, $substring)</pre>
+    Zwraca położenie ostatniego dopasowania podłańcucha (bez uwzględnienia wielkości znaków):
+    <pre>strripos($string, $substring)</pre>
+    Zwraca tekst od pierwszego wystąpienia podłańcucha (wraz z nim) do końca łańcucha (z uwzględnieniem wielkości znaków):
+    <pre>strstr($string, $substring)</pre>
+    Zwraca tekst od pierwszego wystąpienia podłańcucha (wraz z nim) do końca łańcucha (bez uwzględnienia wielkości znaków):
+    <pre>stristr($string, $substring)</pre>
+    Zwraca znaki, począwszy od pozycji podanej w parametrze $offset do końca łańcucha. Jeśli użyty został dodatkowy parametr $characters, określa on liczbę znaków do zwrócenia od pozycji $offset:
+    <pre>substr($string, $offset[, $characters])</pre>
+    Sprawdza, czy w łańcuchu występuje podany podłańcuch i zwraca wartość true albo false:
+    <pre>str_contains($string, $substring)</pre>
+    Sprawdza, czy łańcuch zaczyna się od podanego podłańcucha i zwraca wartość true albo false:
+    <pre>str_starts_with($string, $substring)</pre>
+    Sprawdza, czy łańcuch kończy się podanym podłańcuchem i zwraca wartość true albo false:
+    <pre>str_ends_with($string, $substring)</pre>
+    <p>Białe znaki - symbole, które są używane w tekście i nie posiadają swojej reprezentacji graficznej. Np. spacja, tabulacja, znak przejścia do nowej linii.</p>
+    Usuwa białe znaki po lewej stronie łańcucha. Opcjonalny parametr $delete zawiera zbiór znaków do usunięcia:
+    <pre>ltrim($string[, $delete])</pre>
+    Usuwa białe znaki po prawej stronie łańcucha:
+    <pre>rtrim($string[, $delete])</pre>
+    Usuwa białe znaki po lewej i prawej stronie łańcucha:
+    <pre>trim($string[, $delete])</pre>
+    Zastępuje podłańcuch $old podłańcuchem $new (z uwzględnieniem wielkości znaków):
+    <pre>str_replace($old, $new, $string)</pre>
+    Zastępuje podłańcuch $old podłańcuchem $new (bez uwzględnienia wielkości znaków):
+    <pre>str_ireplace($old, $new, $string)</pre>
+    Powtarza łańcuch podaną liczbę razy:
+    <pre>str_repeat($string, $repeats)</pre>
+
+    <hr>
+
+    <h1>Funkcje liczbowe</h1>
+    Zaokrągla liczby zmiennoprzecinkowe w góre lub w dół.<br>
+    $round określa sposób zaokrąglenia w górę lub w dół i ma następujące opcje:
+    <ul>
+        <li>PHP_ROUND_HALF_UP - Zaokrągla połowy w górę (np. 3,5 do 4)</li>
+        <li>PHP_ROUND_HALF_DOWN - Zaokrągla połowy w dół (np. 3,5 do 3)</li>
+        <li>PHP_ROUND_HALF_EVEN - Zaokrągla połowy do najbliższej liczby parzystej (np. 3,5 do 4)</li>
+        <li>PHP_ROUND_HALF_ODD - Zaokrągla połowy do najbliższej liczby nieparzystej (np. 3,5 do 3)</li>
+    </ul>
+    <pre>round($number, $places, $round)</pre>
+    Zaokrągla wartość w górę do najbliższej liczby całkowitej:
+    <pre>ceil($number)</pre>
+    Zaokrągla wartość w dół do najbliższej liczby całkowitej:
+    <pre>floor($number)</pre>
+    Generuje wartość losową z przedziału od $min do $max:
+    <pre>rand($min, $max)</pre>
+    Zwraca wynik potęgowania:
+    <pre>pow($base, $exponent)</pre>
+    Zwraca pierwiastek kwadratowy podanej wartości:
+    <pre>sqrt($number)</pre>
+    Sprawdza, czy wartość jest liczbą:
+    <pre>is_numeric($number)</pre>
+    Określa format liczby:
+    <pre>number_format($liczba, $miejscaPoPrzecinku, $separatorDziesietny, $separatorTysiecy)</pre>
+
+    <hr>
+
+    <h1>Czas, uniksowe znaczniki czasu</h1>
+    <p>Uniksowe znaczniki czasu reprezentują daty i godziny w postaci liczby sekund, jaka upłynęła od północy 1 stycznia 1970 roku.</p>
+    <h4>Składnia:</h4>
+    Funkcja zwracająca bieżącą datę i godzinę w postaci znacznika:
+    <pre>time()</pre>
+    Funkcja zmieniająca datę podaną w postaci tekstowej na znacznik czasu:
+    <pre>strtotime($dataTekst)</pre>
+    Funkcja zmieniająca poszczególne składniki daty na znacznik:
+    <pre>mktime(godz, min(z zerem), sek(z zerem), mies(bez zera), dzien(bez zera), rok(4 cyfry))</pre>
+    <h4>Przykład:</h4>
     
+    <hr>
+
+    <h1>Operacje na plikach</h1>
+    <h4>Składnia: </h4>
+    <p>Otwarcie pliku:</p>
+    Najważniejsze wartości parametru tryb:
+    <ul>
+        <li>"r" - tylko do odczytu</li>
+        <li>"w" - tylko do zapisu (nadpisuje zawartość pliku podczas edycji)</li>
+        <li>"a" - tylko do zapisu (dopisuje do zawartość pliku podczas edycji)</li>
+    </ul>
+    <pre>fopen(sciezka, tryb)</pre>
+    Odczyt danych pliku:
+    <pre>fread(plik, dlugosc)</pre>
+    Zamknięcie pliku:
+    <pre>fclose(plik)</pre>
+
+    <h4>Przykład:</h4>
+    Odczyt całej zawartości pliku:
+    <pre>
+$plik = fopen("dane.txt", "r");
+$dane = fread($plik, filesize("dane.txt"));</pre>
+    Zapis do pliku:
+    <pre>
+$plik = fopen("dane.txt", "w");
+$tekst = "Hello world";
+fwrite($plik, $tekst);
+fclose($plik);</pre>
+    </main>
 </body>
 </html>
